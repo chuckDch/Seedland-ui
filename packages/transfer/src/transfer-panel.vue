@@ -52,10 +52,10 @@
 </template>
 
 <script>
-  import SdCheckboxGroup from 'element-ui/packages/checkbox-group';
-  import SdCheckbox from 'element-ui/packages/checkbox';
-  import SdInput from 'element-ui/packages/input';
-  import Locale from 'element-ui/src/mixins/locale';
+  import SdCheckboxGroup from 'seedland-ui/packages/checkbox-group';
+  import SdCheckbox from 'seedland-ui/packages/checkbox';
+  import SdInput from 'seedland-ui/packages/input';
+  import Locale from 'seedland-ui/src/mixins/locale';
 
   export default {
     mixins: [Locale],

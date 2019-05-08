@@ -1,9 +1,9 @@
 import Pager from './pager.vue';
-import SdSelect from 'element-ui/packages/select';
-import SdOption from 'element-ui/packages/option';
-import SdInput from 'element-ui/packages/input';
-import Locale from 'element-ui/src/mixins/locale';
-import { valueEquals } from 'element-ui/src/utils/util';
+import SdSelect from 'seedland-ui/packages/select';
+import SdOption from 'seedland-ui/packages/option';
+import SdInput from 'seedland-ui/packages/input';
+import Locale from 'seedland-ui/src/mixins/locale';
+import { valueEquals } from 'seedland-ui/src/utils/util';
 
 export default {
   name: 'SdPagination',

@@ -28,7 +28,7 @@
 </template>
 
 <script>
-  import SdTooltip from 'element-ui/packages/tooltip';
+  import SdTooltip from 'seedland-ui/packages/tooltip';
 
   export default {
     name: 'SdSliderButton',

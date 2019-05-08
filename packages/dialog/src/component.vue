@@ -35,9 +35,9 @@
 </template>
 
 <script>
-  import Popup from 'element-ui/src/utils/popup';
-  import Migrating from 'element-ui/src/mixins/migrating';
-  import emitter from 'element-ui/src/mixins/emitter';
+  import Popup from 'seedland-ui/src/utils/popup';
+  import Migrating from 'seedland-ui/src/mixins/migrating';
+  import emitter from 'seedland-ui/src/mixins/emitter';
 
   export default {
     name: 'SdDialog',

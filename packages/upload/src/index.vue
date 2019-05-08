@@ -1,8 +1,8 @@
 <script>
 import UploadList from './upload-list';
 import Upload from './upload';
-import SdProgress from 'element-ui/packages/progress';
-import Migrating from 'element-ui/src/mixins/migrating';
+import SdProgress from 'seedland-ui/packages/progress';
+import Migrating from 'seedland-ui/src/mixins/migrating';
 
 function noop() {}
 

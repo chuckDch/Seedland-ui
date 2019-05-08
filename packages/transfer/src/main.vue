@@ -42,11 +42,11 @@
 </template>
 
 <script>
-  import SdButton from 'element-ui/packages/button';
-  import Emitter from 'element-ui/src/mixins/emitter';
-  import Locale from 'element-ui/src/mixins/locale';
+  import SdButton from 'seedland-ui/packages/button';
+  import Emitter from 'seedland-ui/src/mixins/emitter';
+  import Locale from 'seedland-ui/src/mixins/locale';
   import TransferPanel from './transfer-panel.vue';
-  import Migrating from 'element-ui/src/mixins/migrating';
+  import Migrating from 'seedland-ui/src/mixins/migrating';
 
   export default {
     name: 'SdTransfer',

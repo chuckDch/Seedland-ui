@@ -1,7 +1,7 @@
 import { getCell, getColumnByCell, getRowIdentity } from './util';
-import { getStyle, hasClass, removeClass, addClass } from 'element-ui/src/utils/dom';
-import SdCheckbox from 'element-ui/packages/checkbox';
-import SdTooltip from 'element-ui/packages/tooltip';
+import { getStyle, hasClass, removeClass, addClass } from 'seedland-ui/src/utils/dom';
+import SdCheckbox from 'seedland-ui/packages/checkbox';
+import SdTooltip from 'seedland-ui/packages/tooltip';
 import debounce from 'throttle-debounce/debounce';
 import LayoutObserver from './layout-observer';
 

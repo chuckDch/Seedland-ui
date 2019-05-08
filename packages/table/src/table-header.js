@@ -1,6 +1,6 @@
-import { hasClass, addClass, removeClass } from 'element-ui/src/utils/dom';
-import SdCheckbox from 'element-ui/packages/checkbox';
-import SdTag from 'element-ui/packages/tag';
+import { hasClass, addClass, removeClass } from 'seedland-ui/src/utils/dom';
+import SdCheckbox from 'seedland-ui/packages/checkbox';
+import SdTag from 'seedland-ui/packages/tag';
 import Vue from 'vue';
 import FilterPanel from './filter-panel.vue';
 import LayoutObserver from './layout-observer';

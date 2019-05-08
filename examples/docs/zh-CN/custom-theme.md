@@ -15,13 +15,13 @@ $--color-primary: teal;
 /* 改变 icon 字体路径变量，必需 */
 $--font-path: '~seedland-ui/lib/theme-chalk/fonts';
 
-@import "~element-ui/packages/theme-chalk/src/index";
+@import "~seedland-ui/packages/theme-chalk/src/index";
 ```
 
 之后，在项目的入口文件中，直接引入以上样式文件即可（无需引入 Element 编译好的 CSS 文件）：
 ```JS
 import Vue from 'vue'
-import Element from 'element-ui'
+import Element from 'seedland-ui'
 import './element-variables.scss'
 
 Vue.use(Element)
@@ -99,7 +99,7 @@ et
 
 ```javascript
 import '../theme/index.css'
-import ElementUI from 'element-ui'
+import ElementUI from 'seedland-ui'
 import Vue from 'vue'
 
 Vue.use(ElementUI)
@@ -113,7 +113,7 @@ Vue.use(ElementUI)
     [
       "component",
       {
-        "libraryName": "element-ui",
+        "libraryName": "seedland-ui",
         "styleLibraryName": "~theme"
       }
     ]

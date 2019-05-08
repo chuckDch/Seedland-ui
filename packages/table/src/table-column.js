@@ -1,7 +1,7 @@
-import SdCheckbox from 'element-ui/packages/checkbox';
-import SdTag from 'element-ui/packages/tag';
-import objectAssign from 'element-ui/src/utils/merge';
-import { getPropByPath } from 'element-ui/src/utils/util';
+import SdCheckbox from 'seedland-ui/packages/checkbox';
+import SdTag from 'seedland-ui/packages/tag';
+import objectAssign from 'seedland-ui/src/utils/merge';
+import { getPropByPath } from 'seedland-ui/src/utils/util';
 
 let columnIdSeed = 1;
 

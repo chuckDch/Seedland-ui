@@ -19,8 +19,8 @@
 </template>
 
 <script type="text/babel">
-  import SdScrollbar from 'element-ui/packages/scrollbar';
-  import scrollIntoView from 'element-ui/src/utils/scroll-into-view';
+  import SdScrollbar from 'seedland-ui/packages/scrollbar';
+  import scrollIntoView from 'seedland-ui/src/utils/scroll-into-view';
 
   const parseTime = function(time) {
     const values = (time || '').split(':');

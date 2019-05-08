@@ -29,9 +29,9 @@
       ],
       "plugins": [
         ["module-resolver", {
-          "root": ["element-ui"],
+          "root": ["seedland-ui"],
           "alias": {
-            "element-ui/src": "seedland-ui/lib"
+            "seedland-ui/src": "seedland-ui/lib"
           }
         }]
       ]

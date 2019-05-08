@@ -43,13 +43,13 @@
 </template>
 
 <script type="text/babel">
-  import Popper from 'element-ui/src/utils/vue-popper';
-  import { PopupManager } from 'element-ui/src/utils/popup';
-  import Locale from 'element-ui/src/mixins/locale';
-  import Clickoutside from 'element-ui/src/utils/clickoutside';
+  import Popper from 'seedland-ui/src/utils/vue-popper';
+  import { PopupManager } from 'seedland-ui/src/utils/popup';
+  import Locale from 'seedland-ui/src/mixins/locale';
+  import Clickoutside from 'seedland-ui/src/utils/clickoutside';
   import Dropdown from './dropdown';
-  import SdCheckbox from 'element-ui/packages/checkbox';
-  import SdCheckboxGroup from 'element-ui/packages/checkbox-group';
+  import SdCheckbox from 'seedland-ui/packages/checkbox';
+  import SdCheckboxGroup from 'seedland-ui/packages/checkbox-group';
 
   export default {
     name: 'SdTableFilterPanel',

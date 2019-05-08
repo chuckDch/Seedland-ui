@@ -74,10 +74,10 @@
 </template>
 
 <script type="text/babel">
-  import SdInputNumber from 'element-ui/packages/input-number';
+  import SdInputNumber from 'seedland-ui/packages/input-number';
   import SliderButton from './button.vue';
   import SliderMarker from './marker';
-  import Emitter from 'element-ui/src/mixins/emitter';
+  import Emitter from 'seedland-ui/src/mixins/emitter';
 
   export default {
     name: 'SdSlider',

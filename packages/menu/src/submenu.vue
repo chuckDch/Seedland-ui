@@ -1,8 +1,8 @@
 <script>
-  import SdCollapseTransition from 'element-ui/src/transitions/collapse-transition';
+  import SdCollapseTransition from 'seedland-ui/src/transitions/collapse-transition';
   import menuMixin from './menu-mixin';
-  import Emitter from 'element-ui/src/mixins/emitter';
-  import Popper from 'element-ui/src/utils/vue-popper';
+  import Emitter from 'seedland-ui/src/mixins/emitter';
+  import Popper from 'seedland-ui/src/utils/vue-popper';
 
   const poperMixins = {
     props: {

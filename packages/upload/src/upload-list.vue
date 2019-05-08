@@ -61,8 +61,8 @@
   </transition-group>
 </template>
 <script>
-  import Locale from 'element-ui/src/mixins/locale';
-  import SdProgress from 'element-ui/packages/progress';
+  import Locale from 'seedland-ui/src/mixins/locale';
+  import SdProgress from 'seedland-ui/packages/progress';
 
   export default {
 

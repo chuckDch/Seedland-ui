@@ -1,10 +1,10 @@
 <script>
-  import Clickoutside from 'element-ui/src/utils/clickoutside';
-  import Emitter from 'element-ui/src/mixins/emitter';
-  import Migrating from 'element-ui/src/mixins/migrating';
-  import SdButton from 'element-ui/packages/button';
-  import SdButtonGroup from 'element-ui/packages/button-group';
-  import { generateId } from 'element-ui/src/utils/util';
+  import Clickoutside from 'seedland-ui/src/utils/clickoutside';
+  import Emitter from 'seedland-ui/src/mixins/emitter';
+  import Migrating from 'seedland-ui/src/mixins/migrating';
+  import SdButton from 'seedland-ui/packages/button';
+  import SdButtonGroup from 'seedland-ui/packages/button-group';
+  import { generateId } from 'seedland-ui/src/utils/util';
 
   export default {
     name: 'SdDropdown',

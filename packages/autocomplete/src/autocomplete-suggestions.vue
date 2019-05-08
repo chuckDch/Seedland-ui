@@ -18,9 +18,9 @@
   </transition>
 </template>
 <script>
-  import Popper from 'element-ui/src/utils/vue-popper';
-  import Emitter from 'element-ui/src/mixins/emitter';
-  import SdScrollbar from 'element-ui/packages/scrollbar';
+  import Popper from 'seedland-ui/src/utils/vue-popper';
+  import Emitter from 'seedland-ui/src/mixins/emitter';
+  import SdScrollbar from 'seedland-ui/packages/scrollbar';
 
   export default {
     components: { SdScrollbar },

@@ -77,13 +77,13 @@
 </template>
 
 <script type="text/babel">
-  import Popup from 'element-ui/src/utils/popup';
-  import Locale from 'element-ui/src/mixins/locale';
-  import SdInput from 'element-ui/packages/input';
-  import SdButton from 'element-ui/packages/button';
-  import { addClass, removeClass } from 'element-ui/src/utils/dom';
-  import { t } from 'element-ui/src/locale';
-  import Dialog from 'element-ui/src/utils/aria-dialog';
+  import Popup from 'seedland-ui/src/utils/popup';
+  import Locale from 'seedland-ui/src/mixins/locale';
+  import SdInput from 'seedland-ui/packages/input';
+  import SdButton from 'seedland-ui/packages/button';
+  import { addClass, removeClass } from 'seedland-ui/src/utils/dom';
+  import { t } from 'seedland-ui/src/locale';
+  import Dialog from 'seedland-ui/src/utils/aria-dialog';
 
   let messageBox;
   let typeMap = {

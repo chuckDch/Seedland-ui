@@ -72,9 +72,9 @@
 </template>
 
 <script type="text/jsx">
-  import SdCollapseTransition from 'element-ui/src/transitions/collapse-transition';
-  import SdCheckbox from 'element-ui/packages/checkbox';
-  import emitter from 'element-ui/src/mixins/emitter';
+  import SdCollapseTransition from 'seedland-ui/src/transitions/collapse-transition';
+  import SdCheckbox from 'seedland-ui/packages/checkbox';
+  import emitter from 'seedland-ui/src/mixins/emitter';
   import { getNodeKey } from './model/util';
 
   export default {

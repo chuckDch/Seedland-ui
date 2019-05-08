@@ -30,8 +30,8 @@
 </template>
 <script>
   import Menu from './menu-mixin';
-  import SdTooltip from 'element-ui/packages/tooltip';
-  import Emitter from 'element-ui/src/mixins/emitter';
+  import SdTooltip from 'seedland-ui/packages/tooltip';
+  import Emitter from 'seedland-ui/src/mixins/emitter';
 
   export default {
     name: 'SdMenuItem',

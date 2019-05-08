@@ -46,9 +46,9 @@
   </div>
 </template>
 <script>
-  import SdInput from 'element-ui/packages/input';
-  import Focus from 'element-ui/src/mixins/focus';
-  import RepeatClick from 'element-ui/src/directives/repeat-click';
+  import SdInput from 'seedland-ui/packages/input';
+  import Focus from 'seedland-ui/src/mixins/focus';
+  import RepeatClick from 'seedland-ui/src/directives/repeat-click';
 
   export default {
     name: 'SdInputNumber',

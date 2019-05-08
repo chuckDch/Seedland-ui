@@ -85,12 +85,12 @@
 
 <script>
 import Vue from 'vue';
-import Clickoutside from 'element-ui/src/utils/clickoutside';
-import { formatDate, parseDate, isDateObject, getWeekNumber } from 'element-ui/src/utils/date-util';
-import Popper from 'element-ui/src/utils/vue-popper';
-import Emitter from 'element-ui/src/mixins/emitter';
-import SdInput from 'element-ui/packages/input';
-import merge from 'element-ui/src/utils/merge';
+import Clickoutside from 'seedland-ui/src/utils/clickoutside';
+import { formatDate, parseDate, isDateObject, getWeekNumber } from 'seedland-ui/src/utils/date-util';
+import Popper from 'seedland-ui/src/utils/vue-popper';
+import Emitter from 'seedland-ui/src/mixins/emitter';
+import SdInput from 'seedland-ui/packages/input';
+import merge from 'seedland-ui/src/utils/merge';
 
 const NewPopper = {
   props: {

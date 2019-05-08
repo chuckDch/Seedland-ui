@@ -1,4 +1,4 @@
-export * from './element-ui'
+export * from './seedland-ui'
 
-import * as ElementUI from './element-ui'
+import * as ElementUI from './seedland-ui'
 export default ElementUI

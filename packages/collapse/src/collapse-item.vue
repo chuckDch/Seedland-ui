@@ -45,9 +45,9 @@
   </div>
 </template>
 <script>
-  import SdCollapseTransition from 'element-ui/src/transitions/collapse-transition';
-  import Emitter from 'element-ui/src/mixins/emitter';
-  import { generateId } from 'element-ui/src/utils/util';
+  import SdCollapseTransition from 'seedland-ui/src/transitions/collapse-transition';
+  import Emitter from 'seedland-ui/src/mixins/emitter';
+  import { generateId } from 'seedland-ui/src/utils/util';
 
   export default {
     name: 'SdCollapseItem',

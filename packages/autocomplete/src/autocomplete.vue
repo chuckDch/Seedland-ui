@@ -58,13 +58,13 @@
 </template>
 <script>
   import debounce from 'throttle-debounce/debounce';
-  import SdInput from 'element-ui/packages/input';
-  import Clickoutside from 'element-ui/src/utils/clickoutside';
+  import SdInput from 'seedland-ui/packages/input';
+  import Clickoutside from 'seedland-ui/src/utils/clickoutside';
   import SdAutocompleteSuggestions from './autocomplete-suggestions.vue';
-  import Emitter from 'element-ui/src/mixins/emitter';
-  import Migrating from 'element-ui/src/mixins/migrating';
-  import { generateId } from 'element-ui/src/utils/util';
-  import Focus from 'element-ui/src/mixins/focus';
+  import Emitter from 'seedland-ui/src/mixins/emitter';
+  import Migrating from 'seedland-ui/src/mixins/migrating';
+  import { generateId } from 'seedland-ui/src/utils/util';
+  import Focus from 'seedland-ui/src/mixins/focus';
 
   export default {
     name: 'SdAutocomplete',
