@@ -1,14 +1,14 @@
 <template>
-  <header class="el-header" :style="{ height }">
+  <header class="sd-header" :style="{ height }">
     <slot></slot>
   </header>
 </template>
 
 <script>
   export default {
-    name: 'ElHeader',
+    name: 'SdHeader',
 
-    componentName: 'ElHeader',
+    componentName: 'SdHeader',
 
     props: {
       height: {

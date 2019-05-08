@@ -1,21 +1,21 @@
 <template>
-  <transition name="el-zoom-in-top">
+  <transition name="sd-zoom-in-top">
     <div
-      class="el-table-filter"
+      class="sd-table-filter"
       v-if="multiple"
       v-clickoutside="handleOutsideClick"
       v-show="showPopper">
-      <div class="el-table-filter__content">
-        <el-scrollbar wrap-class="el-table-filter__wrap">
-          <el-checkbox-group class="el-table-filter__checkbox-group" v-model="filteredValue">
-            <el-checkbox
+      <div class="sd-table-filter__content">
+        <sd-scrollbar wrap-class="sd-table-filter__wrap">
+          <sd-checkbox-group class="sd-table-filter__checkbox-group" v-model="filteredValue">
+            <sd-checkbox
               v-for="filter in filters"
               :key="filter.value"
-              :label="filter.value">{{ filter.text }}</el-checkbox>
-          </el-checkbox-group>
-        </el-scrollbar>
+              :label="filter.value">{{ filter.text }}</sd-checkbox>
+          </sd-checkbox-group>
+        </sd-scrollbar>
       </div>
-      <div class="el-table-filter__bottom">
+      <div class="sd-table-filter__bottom">
         <button @click="handleConfirm"
           :class="{ 'is-disabled': filteredValue.length === 0 }"
           :disabled="filteredValue.length === 0">{{ t('el.table.confirmFilter') }}</button>
@@ -23,15 +23,15 @@
       </div>
     </div>
     <div
-      class="el-table-filter"
+      class="sd-table-filter"
       v-else
       v-clickoutside="handleOutsideClick"
       v-show="showPopper">
-      <ul class="el-table-filter__list">
-        <li class="el-table-filter__list-item"
+      <ul class="sd-table-filter__list">
+        <li class="sd-table-filter__list-item"
             :class="{ 'is-active': filterValue === undefined || filterValue === null }"
             @click="handleSelect(null)">{{ t('el.table.clearFilter') }}</li>
-        <li class="el-table-filter__list-item"
+        <li class="sd-table-filter__list-item"
             v-for="filter in filters"
             :label="filter.value"
             :key="filter.value"
@@ -48,11 +48,11 @@
   import Locale from 'element-ui/src/mixins/locale';
   import Clickoutside from 'element-ui/src/utils/clickoutside';
   import Dropdown from './dropdown';
-  import ElCheckbox from 'element-ui/packages/checkbox';
-  import ElCheckboxGroup from 'element-ui/packages/checkbox-group';
+  import SdCheckbox from 'element-ui/packages/checkbox';
+  import SdCheckboxGroup from 'element-ui/packages/checkbox-group';
 
   export default {
-    name: 'ElTableFilterPanel',
+    name: 'SdTableFilterPanel',
 
     mixins: [Popper, Locale],
 
@@ -61,8 +61,8 @@
     },
 
     components: {
-      ElCheckbox,
-      ElCheckboxGroup
+      SdCheckbox,
+      SdCheckboxGroup
     },
 
     props: {
@@ -73,10 +73,10 @@
     },
 
     customRender(h) {
-      return (<div class="el-table-filter">
-        <div class="el-table-filter__content">
+      return (<div class="sd-table-filter">
+        <div class="sd-table-filter__content">
         </div>
-        <div class="el-table-filter__bottom">
+        <div class="sd-table-filter__bottom">
           <button on-click={ this.handleConfirm }>{ this.t('el.table.confirmFilter') }</button>
           <button on-click={ this.handleReset }>{ this.t('el.table.resetFilter') }</button>
         </div>

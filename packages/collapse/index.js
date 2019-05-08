@@ -1,9 +1,9 @@
-import ElCollapse from './src/collapse';
+import SdCollapse from './src/collapse';
 
 /* istanbul ignore next */
-ElCollapse.install = function(Vue) {
-  Vue.component(ElCollapse.name, ElCollapse);
+SdCollapse.install = function(Vue) {
+  Vue.component(SdCollapse.name, SdCollapse);
 };
 
-export default ElCollapse;
+export default SdCollapse;
 

@@ -1,8 +1,8 @@
-import ElButton from './src/button';
+import SdButton from './src/button';
 
 /* istanbul ignore next */
-ElButton.install = function(Vue) {
-  Vue.component(ElButton.name, ElButton);
+SdButton.install = function(Vue) {
+  Vue.component(SdButton.name, SdButton);
 };
 
-export default ElButton;
+export default SdButton;

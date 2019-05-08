@@ -1,6 +1,6 @@
 <template>
   <div
-    class="el-rate"
+    class="sd-rate"
     @keydown="handleKey"
     role="slider"
     :aria-valuenow="currentValue"
@@ -10,7 +10,7 @@
     tabindex="0">
     <span
       v-for="(item, key) in max"
-      class="el-rate__item"
+      class="sd-rate__item"
       @mousemove="setCurrentValue(item, $event)"
       @mouseleave="resetCurrentValue"
       @click="selectValue(item)"
@@ -18,17 +18,17 @@
       :key="key">
       <i
         :class="[classes[item - 1], { 'hover': hoverIndex === item }]"
-        class="el-rate__icon"
+        class="sd-rate__icon"
         :style="getIconStyle(item)">
         <i
           v-if="showDecimalIcon(item)"
           :class="decimalIconClass"
           :style="decimalStyle"
-          class="el-rate__decimal">
+          class="sd-rate__decimal">
         </i>
       </i>
     </span>
-    <span v-if="showText || showScore" class="el-rate__text" :style="{ color: textColor }">{{ text }}</span>
+    <span v-if="showText || showScore" class="sd-rate__text" :style="{ color: textColor }">{{ text }}</span>
   </div>
 </template>
 
@@ -38,12 +38,12 @@
   import Migrating from 'element-ui/src/mixins/migrating';
 
   export default {
-    name: 'ElRate',
+    name: 'SdRate',
 
     mixins: [Migrating],
 
     inject: {
-      elForm: {
+      sdForm: {
         default: ''
       }
     },
@@ -90,16 +90,16 @@
       iconClasses: {
         type: [Array, Object],
         default() {
-          return ['el-icon-star-on', 'el-icon-star-on', 'el-icon-star-on'];
+          return ['sd-icon-star-on', 'sd-icon-star-on', 'sd-icon-star-on'];
         }
       },
       voidIconClass: {
         type: String,
-        default: 'el-icon-star-off'
+        default: 'sd-icon-star-off'
       },
       disabledVoidIconClass: {
         type: String,
-        default: 'el-icon-star-on'
+        default: 'sd-icon-star-on'
       },
       disabled: {
         type: Boolean,
@@ -214,7 +214,7 @@
       },
 
       rateDisabled() {
-        return this.disabled || (this.elForm || {}).disabled;
+        return this.disabled || (this.sdForm || {}).disabled;
       }
     },
 
@@ -313,10 +313,10 @@
         /* istanbul ignore if */
         if (this.allowHalf) {
           let target = event.target;
-          if (hasClass(target, 'el-rate__item')) {
-            target = target.querySelector('.el-rate__icon');
+          if (hasClass(target, 'sd-rate__item')) {
+            target = target.querySelector('.sd-rate__icon');
           }
-          if (hasClass(target, 'el-rate__decimal')) {
+          if (hasClass(target, 'sd-rate__decimal')) {
             target = target.parentNode;
           }
           this.pointerAtLeftHalf = event.offsetX * 2 <= target.clientWidth;

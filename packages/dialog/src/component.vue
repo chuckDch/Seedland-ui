@@ -3,30 +3,30 @@
     name="dialog-fade"
     @after-enter="afterEnter"
     @after-leave="afterLeave">
-    <div class="el-dialog__wrapper" v-show="visible" @click.self="handleWrapperClick">
+    <div class="sd-dialog__wrapper" v-show="visible" @click.self="handleWrapperClick">
       <div
         role="dialog"
         aria-modal="true"
         :aria-label="title || 'dialog'"
-        class="el-dialog"
-        :class="[{ 'is-fullscreen': fullscreen, 'el-dialog--center': center }, customClass]"
+        class="sd-dialog"
+        :class="[{ 'is-fullscreen': fullscreen, 'sd-dialog--center': center }, customClass]"
         ref="dialog"
         :style="style">
-        <div class="el-dialog__header">
+        <div class="sd-dialog__header">
           <slot name="title">
-            <span class="el-dialog__title">{{ title }}</span>
+            <span class="sd-dialog__title">{{ title }}</span>
           </slot>
           <button
             type="button"
-            class="el-dialog__headerbtn"
+            class="sd-dialog__headerbtn"
             aria-label="Close"
             v-if="showClose"
             @click="handleClose">
-            <i class="el-dialog__close el-icon el-icon-close"></i>
+            <i class="sd-dialog__close sd-icon sd-icon-close"></i>
           </button>
         </div>
-        <div class="el-dialog__body" v-if="rendered"><slot></slot></div>
-        <div class="el-dialog__footer" v-if="$slots.footer">
+        <div class="sd-dialog__body" v-if="rendered"><slot></slot></div>
+        <div class="sd-dialog__footer" v-if="$slots.footer">
           <slot name="footer"></slot>
         </div>
       </div>
@@ -40,7 +40,7 @@
   import emitter from 'element-ui/src/mixins/emitter';
 
   export default {
-    name: 'ElDialog',
+    name: 'SdDialog',
 
     mixins: [Popup, emitter, Migrating],
 
@@ -170,8 +170,8 @@
         }
       },
       updatePopper() {
-        this.broadcast('ElSelectDropdown', 'updatePopper');
-        this.broadcast('ElDropdownMenu', 'updatePopper');
+        this.broadcast('SdSelectDropdown', 'updatePopper');
+        this.broadcast('SdDropdownMenu', 'updatePopper');
       },
       afterEnter() {
         this.$emit('opened');

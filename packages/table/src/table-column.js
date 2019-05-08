@@ -1,5 +1,5 @@
-import ElCheckbox from 'element-ui/packages/checkbox';
-import ElTag from 'element-ui/packages/tag';
+import SdCheckbox from 'element-ui/packages/checkbox';
+import SdTag from 'element-ui/packages/tag';
 import objectAssign from 'element-ui/src/utils/merge';
 import { getPropByPath } from 'element-ui/src/utils/util';
 
@@ -14,7 +14,7 @@ const defaults = {
     minWidth: 48,
     realWidth: 48,
     order: '',
-    className: 'el-table-column--selection'
+    className: 'sd-table-column--selection'
   },
   expand: {
     width: 48,
@@ -33,14 +33,14 @@ const defaults = {
 const forced = {
   selection: {
     renderHeader: function(h, { store }) {
-      return <el-checkbox
+      return <sd-checkbox
         disabled={ store.states.data && store.states.data.length === 0 }
         indeterminate={ store.states.selection.length > 0 && !this.isAllSelected }
         nativeOn-click={ this.toggleAllSelection }
         value={ this.isAllSelected } />;
     },
     renderCell: function(h, { row, column, store, $index }) {
-      return <el-checkbox
+      return <sd-checkbox
         nativeOn-click={ (event) => event.stopPropagation() }
         value={ store.isSelected(row) }
         disabled={ column.selectable ? !column.selectable.call(null, row, $index) : false }
@@ -73,14 +73,14 @@ const forced = {
     },
     renderCell: function(h, { row, store }, proxy) {
       const expanded = store.states.expandRows.indexOf(row) > -1;
-      return <div class={ 'el-table__expand-icon ' + (expanded ? 'el-table__expand-icon--expanded' : '') }
+      return <div class={ 'sd-table__expand-icon ' + (expanded ? 'sd-table__expand-icon--expanded' : '') }
         on-click={ e => proxy.handleExpandClick(row, e) }>
-        <i class='el-icon el-icon-arrow-right'></i>
+        <i class='sd-icon sd-icon-arrow-right'></i>
       </div>;
     },
     sortable: false,
     resizable: false,
-    className: 'el-table__expand-column'
+    className: 'sd-table__expand-column'
   }
 };
 
@@ -137,7 +137,7 @@ const parseMinWidth = (minWidth) => {
 };
 
 export default {
-  name: 'ElTableColumn',
+  name: 'SdTableColumn',
 
   props: {
     type: {
@@ -206,8 +206,8 @@ export default {
   },
 
   components: {
-    ElCheckbox,
-    ElTag
+    SdCheckbox,
+    SdTag
   },
 
   computed: {
@@ -332,7 +332,7 @@ export default {
       ];
 
       return _self.showOverflowTooltip || _self.showTooltipWhenOverflow
-        ? <div class="cell el-tooltip" style={ {width: (data.column.realWidth || data.column.width) - 1 + 'px'} }>{ children }</div>
+        ? <div class="cell sd-tooltip" style={ {width: (data.column.realWidth || data.column.width) - 1 + 'px'} }>{ children }</div>
         : (<div class="cell">
           { children }
         </div>);
@@ -448,14 +448,14 @@ export default {
     renderTreeCell(data) {
       if (!data.treeNode) return null;
       const ele = [];
-      ele.push(<span class="el-table__indent" style={{'padding-left': data.treeNode.indent + 'px'}}></span>);
+      ele.push(<span class="sd-table__indent" style={{'padding-left': data.treeNode.indent + 'px'}}></span>);
       if (data.treeNode.hasChildren) {
-        ele.push(<div class={ ['el-table__expand-icon', data.treeNode.expanded ? 'el-table__expand-icon--expanded' : '']}
+        ele.push(<div class={ ['sd-table__expand-icon', data.treeNode.expanded ? 'sd-table__expand-icon--expanded' : '']}
           on-click={this.handleTreeExpandIconClick.bind(this, data)}>
-          <i class='el-icon el-icon-arrow-right'></i>
+          <i class='sd-icon sd-icon-arrow-right'></i>
         </div>);
       } else {
-        ele.push(<span class="el-table__placeholder"></span>);
+        ele.push(<span class="sd-table__placeholder"></span>);
       }
       return ele;
     },

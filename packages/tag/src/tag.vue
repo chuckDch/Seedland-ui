@@ -1,6 +1,6 @@
 <script>
   export default {
-    name: 'ElTag',
+    name: 'SdTag',
     props: {
       text: String,
       closable: Boolean,
@@ -26,18 +26,18 @@
       }
     },
     render(h) {
-      const classes = [ 'el-tag', this.type ? `el-tag--${this.type}` : '',
-        this.tagSize ? `el-tag--${this.tagSize}` : '',
+      const classes = [ 'sd-tag', this.type ? `sd-tag--${this.type}` : '',
+        this.tagSize ? `sd-tag--${this.tagSize}` : '',
         {'is-hit': this.hit}
       ];
       const tagEl = (<span class={classes} style={{backgroundColor: this.color}} on-click={this.handleClick}>
         { this.$slots.default }
         {
-          this.closable && <i class="el-tag__close el-icon-close" on-click={this.handleClose}></i>
+          this.closable && <i class="sd-tag__close sd-icon-close" on-click={this.handleClose}></i>
         }
       </span>);
 
-      return this.disableTransitions ? tagEl : <transition name="el-zoom-in-center">{ tagEl }</transition>;
+      return this.disableTransitions ? tagEl : <transition name="sd-zoom-in-center">{ tagEl }</transition>;
     }
   };
 </script>

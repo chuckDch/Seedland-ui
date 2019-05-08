@@ -1,8 +1,8 @@
-import ElTabs from './src/tabs';
+import SdTabs from './src/tabs';
 
 /* istanbul ignore next */
-ElTabs.install = function(Vue) {
-  Vue.component(ElTabs.name, ElTabs);
+SdTabs.install = function(Vue) {
+  Vue.component(SdTabs.name, SdTabs);
 };
 
-export default ElTabs;
+export default SdTabs;

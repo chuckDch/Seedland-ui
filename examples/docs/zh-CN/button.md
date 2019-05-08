@@ -8,41 +8,41 @@
 :::demo 使用`type`、`plain`、`round`和`circle`属性来定义 Button 的样式。
 
 ```html
-<el-row>
-  <el-button>默认按钮</el-button>
-  <el-button type="primary">主要按钮</el-button>
-  <el-button type="success">成功按钮</el-button>
-  <el-button type="info">信息按钮</el-button>
-  <el-button type="warning">警告按钮</el-button>
-  <el-button type="danger">危险按钮</el-button>
-</el-row>
+<sd-row>
+  <sd-button>默认按钮</sd-button>
+  <sd-button type="primary">主要按钮</sd-button>
+  <sd-button type="success">成功按钮</sd-button>
+  <sd-button type="info">信息按钮</sd-button>
+  <sd-button type="warning">警告按钮</sd-button>
+  <sd-button type="danger">危险按钮</sd-button>
+</sd-row>
 
-<el-row>
-  <el-button plain>朴素按钮</el-button>
-  <el-button type="primary" plain>主要按钮</el-button>
-  <el-button type="success" plain>成功按钮</el-button>
-  <el-button type="info" plain>信息按钮</el-button>
-  <el-button type="warning" plain>警告按钮</el-button>
-  <el-button type="danger" plain>危险按钮</el-button>
-</el-row>
+<sd-row>
+  <sd-button plain>朴素按钮</sd-button>
+  <sd-button type="primary" plain>主要按钮</sd-button>
+  <sd-button type="success" plain>成功按钮</sd-button>
+  <sd-button type="info" plain>信息按钮</sd-button>
+  <sd-button type="warning" plain>警告按钮</sd-button>
+  <sd-button type="danger" plain>危险按钮</sd-button>
+</sd-row>
 
-<el-row>
-  <el-button round>圆角按钮</el-button>
-  <el-button type="primary" round>主要按钮</el-button>
-  <el-button type="success" round>成功按钮</el-button>
-  <el-button type="info" round>信息按钮</el-button>
-  <el-button type="warning" round>警告按钮</el-button>
-  <el-button type="danger" round>危险按钮</el-button>
-</el-row>
+<sd-row>
+  <sd-button round>圆角按钮</sd-button>
+  <sd-button type="primary" round>主要按钮</sd-button>
+  <sd-button type="success" round>成功按钮</sd-button>
+  <sd-button type="info" round>信息按钮</sd-button>
+  <sd-button type="warning" round>警告按钮</sd-button>
+  <sd-button type="danger" round>危险按钮</sd-button>
+</sd-row>
 
-<el-row>
-  <el-button icon="el-icon-search" circle></el-button>
-  <el-button type="primary" icon="el-icon-edit" circle></el-button>
-  <el-button type="success" icon="el-icon-check" circle></el-button>
-  <el-button type="info" icon="el-icon-message" circle></el-button>
-  <el-button type="warning" icon="el-icon-star-off" circle></el-button>
-  <el-button type="danger" icon="el-icon-delete" circle></el-button>
-</el-row>
+<sd-row>
+  <sd-button icon="sd-icon-search" circle></sd-button>
+  <sd-button type="primary" icon="sd-icon-edit" circle></sd-button>
+  <sd-button type="success" icon="sd-icon-check" circle></sd-button>
+  <sd-button type="info" icon="sd-icon-message" circle></sd-button>
+  <sd-button type="warning" icon="sd-icon-star-off" circle></sd-button>
+  <sd-button type="danger" icon="sd-icon-delete" circle></sd-button>
+</sd-row>
 ```
 :::
 
@@ -53,23 +53,23 @@
 :::demo 你可以使用`disabled`属性来定义按钮是否可用，它接受一个`Boolean`值。
 
 ```html
-<el-row>
-  <el-button disabled>默认按钮</el-button>
-  <el-button type="primary" disabled>主要按钮</el-button>
-  <el-button type="success" disabled>成功按钮</el-button>
-  <el-button type="info" disabled>信息按钮</el-button>
-  <el-button type="warning" disabled>警告按钮</el-button>
-  <el-button type="danger" disabled>危险按钮</el-button>
-</el-row>
+<sd-row>
+  <sd-button disabled>默认按钮</sd-button>
+  <sd-button type="primary" disabled>主要按钮</sd-button>
+  <sd-button type="success" disabled>成功按钮</sd-button>
+  <sd-button type="info" disabled>信息按钮</sd-button>
+  <sd-button type="warning" disabled>警告按钮</sd-button>
+  <sd-button type="danger" disabled>危险按钮</sd-button>
+</sd-row>
 
-<el-row>
-  <el-button plain disabled>朴素按钮</el-button>
-  <el-button type="primary" plain disabled>主要按钮</el-button>
-  <el-button type="success" plain disabled>成功按钮</el-button>
-  <el-button type="info" plain disabled>信息按钮</el-button>
-  <el-button type="warning" plain disabled>警告按钮</el-button>
-  <el-button type="danger" plain disabled>危险按钮</el-button>
-</el-row>
+<sd-row>
+  <sd-button plain disabled>朴素按钮</sd-button>
+  <sd-button type="primary" plain disabled>主要按钮</sd-button>
+  <sd-button type="success" plain disabled>成功按钮</sd-button>
+  <sd-button type="info" plain disabled>信息按钮</sd-button>
+  <sd-button type="warning" plain disabled>警告按钮</sd-button>
+  <sd-button type="danger" plain disabled>危险按钮</sd-button>
+</sd-row>
 ```
 :::
 
@@ -79,8 +79,8 @@
 
 :::demo
 ```html
-<el-button type="text">文字按钮</el-button>
-<el-button type="text" disabled>文字按钮</el-button>
+<sd-button type="text">文字按钮</sd-button>
+<sd-button type="text" disabled>文字按钮</sd-button>
 ```
 :::
 
@@ -88,14 +88,14 @@
 
 带图标的按钮可增强辨识度（有文字）或节省空间（无文字）。
 
-:::demo 设置`icon`属性即可，icon 的列表可以参考 Element 的 icon 组件，也可以设置在文字右边的 icon ，只要使用`i`标签即可，可以使用自定义图标。
+:::demo 设置`icon`属性即可，icon 的列表可以参考 sdement 的 icon 组件，也可以设置在文字右边的 icon ，只要使用`i`标签即可，可以使用自定义图标。
 
 ```html
-<el-button type="primary" icon="el-icon-edit"></el-button>
-<el-button type="primary" icon="el-icon-share"></el-button>
-<el-button type="primary" icon="el-icon-delete"></el-button>
-<el-button type="primary" icon="el-icon-search">搜索</el-button>
-<el-button type="primary">上传<i class="el-icon-upload el-icon--right"></i></el-button>
+<sd-button type="primary" icon="sd-icon-edit"></sd-button>
+<sd-button type="primary" icon="sd-icon-share"></sd-button>
+<sd-button type="primary" icon="sd-icon-delete"></sd-button>
+<sd-button type="primary" icon="sd-icon-search">搜索</sd-button>
+<sd-button type="primary">上传<i class="sd-icon-upload sd-icon--right"></i></sd-button>
 ```
 :::
 
@@ -103,18 +103,18 @@
 
 以按钮组的方式出现，常用于多项类似操作。
 
-:::demo 使用`<el-button-group>`标签来嵌套你的按钮。
+:::demo 使用`<sd-button-group>`标签来嵌套你的按钮。
 
 ```html
-<el-button-group>
-  <el-button type="primary" icon="el-icon-arrow-left">上一页</el-button>
-  <el-button type="primary">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
-</el-button-group>
-<el-button-group>
-  <el-button type="primary" icon="el-icon-edit"></el-button>
-  <el-button type="primary" icon="el-icon-share"></el-button>
-  <el-button type="primary" icon="el-icon-delete"></el-button>
-</el-button-group>
+<sd-button-group>
+  <sd-button type="primary" icon="sd-icon-arrow-left">上一页</sd-button>
+  <sd-button type="primary">下一页<i class="sd-icon-arrow-right sd-icon--right"></i></sd-button>
+</sd-button-group>
+<sd-button-group>
+  <sd-button type="primary" icon="sd-icon-edit"></sd-button>
+  <sd-button type="primary" icon="sd-icon-share"></sd-button>
+  <sd-button type="primary" icon="sd-icon-delete"></sd-button>
+</sd-button-group>
 ```
 :::
 
@@ -125,7 +125,7 @@
 :::demo 要设置为 loading 状态，只要设置`loading`属性为`true`即可。
 
 ```html
-<el-button type="primary" :loading="true">加载中</el-button>
+<sd-button type="primary" :loading="true">加载中</sd-button>
 ```
 :::
 
@@ -136,18 +136,18 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
 :::demo 额外的尺寸：`medium`、`small`、`mini`，通过设置`size`属性来配置它们。
 
 ```html
-<el-row>
-  <el-button>默认按钮</el-button>
-  <el-button size="medium">中等按钮</el-button>
-  <el-button size="small">小型按钮</el-button>
-  <el-button size="mini">超小按钮</el-button>
-</el-row>
-<el-row>
-  <el-button round>默认按钮</el-button>
-  <el-button size="medium" round>中等按钮</el-button>
-  <el-button size="small" round>小型按钮</el-button>
-  <el-button size="mini" round>超小按钮</el-button>
-</el-row>
+<sd-row>
+  <sd-button>默认按钮</sd-button>
+  <sd-button size="medium">中等按钮</sd-button>
+  <sd-button size="small">小型按钮</sd-button>
+  <sd-button size="mini">超小按钮</sd-button>
+</sd-row>
+<sd-row>
+  <sd-button round>默认按钮</sd-button>
+  <sd-button size="medium" round>中等按钮</sd-button>
+  <sd-button size="small" round>小型按钮</sd-button>
+  <sd-button size="mini" round>超小按钮</sd-button>
+</sd-row>
 ```
 :::
 

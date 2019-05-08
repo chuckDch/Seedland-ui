@@ -1,8 +1,8 @@
-import ElTimelineItem from '../timeline/src/item';
+import SdTimelineItem from '../timeline/src/item';
 
 /* istanbul ignore next */
-ElTimelineItem.install = function(Vue) {
-  Vue.component(ElTimelineItem.name, ElTimelineItem);
+SdTimelineItem.install = function(Vue) {
+  Vue.component(SdTimelineItem.name, SdTimelineItem);
 };
 
-export default ElTimelineItem;
+export default SdTimelineItem;

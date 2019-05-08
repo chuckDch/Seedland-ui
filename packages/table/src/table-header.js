@@ -1,6 +1,6 @@
 import { hasClass, addClass, removeClass } from 'element-ui/src/utils/dom';
-import ElCheckbox from 'element-ui/packages/checkbox';
-import ElTag from 'element-ui/packages/tag';
+import SdCheckbox from 'element-ui/packages/checkbox';
+import SdTag from 'element-ui/packages/tag';
 import Vue from 'vue';
 import FilterPanel from './filter-panel.vue';
 import LayoutObserver from './layout-observer';
@@ -64,7 +64,7 @@ const convertToRows = (originColumns) => {
 };
 
 export default {
-  name: 'ElTableHeader',
+  name: 'SdTableHeader',
 
   mixins: [LayoutObserver],
 
@@ -76,7 +76,7 @@ export default {
     if (isGroup) this.$parent.isGroup = true;
     return (
       <table
-        class="el-table__header"
+        class="sd-table__header"
         cellspacing="0"
         cellpadding="0"
         border="0">
@@ -126,7 +126,7 @@ export default {
                         }
                         {
                           column.filterable
-                            ? <span class="el-table__column-filter-trigger" on-click={ ($event) => this.handleFilterClick($event, column) }><i class={ ['el-icon-arrow-down', column.filterOpened ? 'el-icon-arrow-up' : ''] }></i></span>
+                            ? <span class="sd-table__column-filter-trigger" on-click={ ($event) => this.handleFilterClick($event, column) }><i class={ ['sd-icon-arrow-down', column.filterOpened ? 'sd-icon-arrow-up' : ''] }></i></span>
                             : ''
                         }
                       </div>
@@ -162,8 +162,8 @@ export default {
   },
 
   components: {
-    ElCheckbox,
-    ElTag
+    SdCheckbox,
+    SdTag
   },
 
   computed: {
@@ -312,7 +312,7 @@ export default {
       event.stopPropagation();
       const target = event.target;
       let cell = target.tagName === 'TH' ? target : target.parentNode;
-      cell = cell.querySelector('.el-table__column-filter-trigger') || cell;
+      cell = cell.querySelector('.sd-table__column-filter-trigger') || cell;
       const table = this.$parent;
 
       let filterPanel = this.filterPanels[column.id];

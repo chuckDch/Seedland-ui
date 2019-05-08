@@ -1,11 +1,11 @@
 <template>
-  <div class="el-breadcrumb" aria-label="Breadcrumb" role="navigation">
+  <div class="sd-breadcrumb" aria-label="Breadcrumb" role="navigation">
     <slot></slot>
   </div>
 </template>
 <script>
   export default {
-    name: 'ElBreadcrumb',
+    name: 'SdBreadcrumb',
 
     props: {
       separator: {
@@ -20,12 +20,12 @@
 
     provide() {
       return {
-        elBreadcrumb: this
+        sdBreadcrumb: this
       };
     },
 
     mounted() {
-      const items = this.$el.querySelectorAll('.el-breadcrumb__item');
+      const items = this.$el.querySelectorAll('.sd-breadcrumb__item');
       if (items.length) {
         items[items.length - 1].setAttribute('aria-current', 'page');
       }

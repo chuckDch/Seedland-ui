@@ -9,20 +9,20 @@
   font-size: $--font-size-base;
   line-height: $--input-height;
 
-  .el-input,
-  .el-input__inner {
+  .sd-input,
+  .sd-input__inner {
     cursor: pointer;
   }
 
-  .el-input.is-focus .el-input__inner {
+  .sd-input.is-focus .sd-input__inner {
     border-color: $--input-focus-border;
   }
 
-  .el-input__icon {
+  .sd-input__icon {
     transition: none;
   }
 
-  .el-icon-arrow-down {
+  .sd-icon-arrow-down {
     transition: transform .3s;
     font-size: 14px;
 
@@ -31,7 +31,7 @@
     }
   }
 
-  .el-icon-circle-close {
+  .sd-icon-circle-close {
     z-index: #{$--index-normal + 1};
     transition: $--color-transition-base;
 
@@ -82,7 +82,7 @@
   }
 
   @include when(disabled) {
-    .el-cascader__label {
+    .sd-cascader__label {
       z-index: #{$--index-normal + 1};
       color: $--disabled-color-base;
     }
@@ -178,7 +178,7 @@
     max-height: 180px;
     overflow: auto;
 
-    .el-cascader-menu__item {
+    .sd-cascader-menu__item {
       overflow: visible;
     }
   }

@@ -1,8 +1,8 @@
-import ElMenuItemGroup from '../menu/src/menu-item-group';
+import SdMenuItemGroup from '../menu/src/menu-item-group';
 
 /* istanbul ignore next */
-ElMenuItemGroup.install = function(Vue) {
-  Vue.component(ElMenuItemGroup.name, ElMenuItemGroup);
+SdMenuItemGroup.install = function(Vue) {
+  Vue.component(SdMenuItemGroup.name, SdMenuItemGroup);
 };
 
-export default ElMenuItemGroup;
+export default SdMenuItemGroup;

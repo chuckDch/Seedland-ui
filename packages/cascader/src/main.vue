@@ -1,12 +1,12 @@
 <template>
   <span
-    class="el-cascader"
+    class="sd-cascader"
     :class="[
       {
         'is-opened': menuVisible,
         'is-disabled': cascaderDisabled
       },
-      cascaderSize ? 'el-cascader--' + cascaderSize : ''
+      cascaderSize ? 'sd-cascader--' + cascaderSize : ''
     ]"
     @click="handleClick"
     @mouseenter="inputHover = true"
@@ -17,7 +17,7 @@
     v-clickoutside="handleClickoutside"
     @keydown="handleKeydown"
   >
-    <el-input
+    <sd-input
       ref="input"
       :readonly="readonly"
       :placeholder="currentLabels.length ? undefined : placeholder"
@@ -36,18 +36,18 @@
         <i
           key="1"
           v-if="clearable && inputHover && currentLabels.length"
-          class="el-input__icon el-icon-circle-close el-cascader__clearIcon"
+          class="sd-input__icon sd-icon-circle-close sd-cascader__clearIcon"
           @click="clearValue"
         ></i>
         <i
           key="2"
           v-else
-          class="el-input__icon el-icon-arrow-down"
+          class="sd-input__icon sd-icon-arrow-down"
           :class="{ 'is-reverse': menuVisible }"
         ></i>
       </template>
-    </el-input>
-    <span class="el-cascader__label" v-show="inputValue === '' && !isOnComposition">
+    </sd-input>
+    <span class="sd-cascader__label" v-show="inputValue === '' && !isOnComposition">
       <template v-if="showAllLevels">
         <template v-for="(label, index) in currentLabels">
           {{ label }}
@@ -63,8 +63,8 @@
 
 <script>
 import Vue from 'vue';
-import ElCascaderMenu from './menu';
-import ElInput from 'element-ui/packages/input';
+import SdCascaderMenu from './menu';
+import SdInput from 'element-ui/packages/input';
 import Popper from 'element-ui/src/utils/vue-popper';
 import Clickoutside from 'element-ui/src/utils/clickoutside';
 import emitter from 'element-ui/src/mixins/emitter';
@@ -91,23 +91,23 @@ const popperMixin = {
 };
 
 export default {
-  name: 'ElCascader',
+  name: 'SdCascader',
 
   directives: { Clickoutside },
 
   mixins: [popperMixin, emitter, Locale],
 
   inject: {
-    elForm: {
+    sdForm: {
       default: ''
     },
-    elFormItem: {
+    sdFormItem: {
       default: ''
     }
   },
 
   components: {
-    ElInput
+    SdInput
   },
 
   props: {
@@ -214,13 +214,13 @@ export default {
       return labels;
     },
     _elFormItemSize() {
-      return (this.elFormItem || {}).elFormItemSize;
+      return (this.sdFormItem || {}).sdFormItemSize;
     },
     cascaderSize() {
       return this.size || this._elFormItemSize || (this.$ELEMENT || {}).size;
     },
     cascaderDisabled() {
-      return this.disabled || (this.elForm || {}).disabled;
+      return this.disabled || (this.sdForm || {}).disabled;
     },
     readonly() {
       return !this.filterable || (!isIE() && !isEdge() && !this.menuVisible);
@@ -237,7 +237,7 @@ export default {
       this.currentValue = value;
     },
     currentValue(value) {
-      this.dispatch('ElFormItem', 'el.form.change', [value]);
+      this.dispatch('SdFormItem', 'el.form.change', [value]);
     },
     options: {
       deep: true,
@@ -253,7 +253,7 @@ export default {
 
   methods: {
     initMenu() {
-      this.menu = new Vue(ElCascaderMenu).$mount();
+      this.menu = new Vue(SdCascaderMenu).$mount();
       this.menu.options = this.options;
       this.menu.props = this.props;
       this.menu.expandTrigger = this.expandTrigger;
@@ -302,7 +302,7 @@ export default {
       } else if (keyCode === 40) { // down
         this.menuVisible = true; // 打开
         setTimeout(() => {
-          const firstMenu = this.popperElm.querySelectorAll('.el-cascader-menu')[0];
+          const firstMenu = this.popperElm.querySelectorAll('.sd-cascader-menu')[0];
           firstMenu.querySelectorAll("[tabindex='-1']")[0].focus();
         });
         e.stopPropagation();
@@ -371,7 +371,7 @@ export default {
       const h = this._c;
       return label.split(keyword)
         .map((node, index) => index === 0 ? node : [
-          h('span', { class: { 'el-cascader-menu__item__keyword': true }}, [this._v(keyword)]),
+          h('span', { class: { 'sd-cascader-menu__item__keyword': true }}, [this._v(keyword)]),
           node
         ]);
     },

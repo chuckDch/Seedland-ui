@@ -49,8 +49,8 @@ loadingDirective.install = Vue => {
         const target = binding.modifiers.fullscreen || binding.modifiers.body
           ? document.body
           : el;
-        removeClass(target, 'el-loading-parent--relative');
-        removeClass(target, 'el-loading-parent--hidden');
+        removeClass(target, 'sd-loading-parent--relative');
+        removeClass(target, 'sd-loading-parent--hidden');
         el.instance.hiding = false;
       }, 300, true);
       el.instance.visible = false;
@@ -64,10 +64,10 @@ loadingDirective.install = Vue => {
       });
 
       if (el.originalPosition !== 'absolute' && el.originalPosition !== 'fixed') {
-        addClass(parent, 'el-loading-parent--relative');
+        addClass(parent, 'sd-loading-parent--relative');
       }
       if (binding.modifiers.fullscreen && binding.modifiers.lock) {
-        addClass(parent, 'el-loading-parent--hidden');
+        addClass(parent, 'sd-loading-parent--hidden');
       }
       el.domVisible = true;
 
@@ -85,10 +85,10 @@ loadingDirective.install = Vue => {
 
   Vue.directive('loading', {
     bind: function(el, binding, vnode) {
-      const textExr = el.getAttribute('element-loading-text');
-      const spinnerExr = el.getAttribute('element-loading-spinner');
-      const backgroundExr = el.getAttribute('element-loading-background');
-      const customClassExr = el.getAttribute('element-loading-custom-class');
+      const textExr = el.getAttribute('seedland-loading-text');
+      const spinnerExr = el.getAttribute('seedland-loading-spinner');
+      const backgroundExr = el.getAttribute('seedland-loading-background');
+      const customClassExr = el.getAttribute('seedland-loading-custom-class');
       const vm = vnode.context;
       const mask = new Mask({
         el: document.createElement('div'),
@@ -108,7 +108,7 @@ loadingDirective.install = Vue => {
     },
 
     update: function(el, binding) {
-      el.instance.setText(el.getAttribute('element-loading-text'));
+      el.instance.setText(el.getAttribute('seedland-loading-text'));
       if (binding.oldValue !== binding.value) {
         toggleLoading(el, binding);
       }

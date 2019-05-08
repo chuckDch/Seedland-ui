@@ -17,7 +17,7 @@ export default {
     hideHeader: Boolean
   },
 
-  inject: ['elCalendar'],
+  inject: ['sdCalendar'],
 
   methods: {
     toNestedArr(days) {
@@ -61,7 +61,7 @@ export default {
     },
 
     cellRenderProxy({ text, type }) {
-      let render = this.elCalendar.$scopedSlots.dateCell;
+      let render = this.sdCalendar.$scopedSlots.dateCell;
       if (!render) return <span>{ text }</span>;
 
       const day = this.getFormateDate(text, type);
@@ -92,7 +92,7 @@ export default {
     },
 
     formatedToday() {
-      return this.elCalendar.formatedToday;
+      return this.sdCalendar.formatedToday;
     },
 
     isInRange() {
@@ -153,7 +153,7 @@ export default {
     return (
       <table
         class={{
-          'el-calendar-table': true,
+          'sd-calendar-table': true,
           'is-range': this.isInRange
         }}
         cellspacing="0"
@@ -165,15 +165,15 @@ export default {
           {
             this.rows.map((row, index) => <tr
               class={{
-                'el-calendar-table__row': true,
-                'el-calendar-table__row--hide-border': index === 0 && this.hideHeader
+                'sd-calendar-table__row': true,
+                'sd-calendar-table__row--hide-border': index === 0 && this.hideHeader
               }}
               key={index}>
               {
                 row.map((cell, key) => <td key={key}
                   class={ this.getCellClass(cell) }
                   onClick={this.pickDay.bind(this, cell)}>
-                  <div class="el-calendar-day">
+                  <div class="sd-calendar-day">
                     {
                       this.cellRenderProxy(cell)
                     }

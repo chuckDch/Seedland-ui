@@ -1,8 +1,8 @@
-import ElCheckboxButton from '../checkbox/src/checkbox-button.vue';
+import SdCheckboxButton from '../checkbox/src/checkbox-button.vue';
 
 /* istanbul ignore next */
-ElCheckboxButton.install = function(Vue) {
-  Vue.component(ElCheckboxButton.name, ElCheckboxButton);
+SdCheckboxButton.install = function(Vue) {
+  Vue.component(SdCheckboxButton.name, SdCheckboxButton);
 };
 
-export default ElCheckboxButton;
+export default SdCheckboxButton;

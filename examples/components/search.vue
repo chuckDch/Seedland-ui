@@ -1,5 +1,5 @@
 <template>
-  <el-autocomplete
+  <sd-autocomplete
     v-model="query"
     size="small"
     :popper-class="`algolia-search${ isEmpty ? ' is-empty' : '' }`"
@@ -32,7 +32,7 @@
         class="algolia-search-empty"
         v-if="props.item.isEmpty">{{ emptyText }}</p>
     </template>
-  </el-autocomplete>
+  </sd-autocomplete>
 </template>
 
 <style lang="scss">
@@ -40,12 +40,12 @@
     width: 450px !important;
 
     &.is-empty {
-      .el-autocomplete-suggestion__list {
+      .sd-autocomplete-suggestion__list {
         padding-bottom: 0;
       }
     }
 
-    .el-autocomplete-suggestion__list {
+    .sd-autocomplete-suggestion__list {
       position: static !important;
       padding-bottom: 28px;
     }
@@ -127,21 +127,6 @@
             search: '搜索文档',
             empty: '无匹配结果',
             index: 'zh'
-          },
-          'en-US': {
-            search: 'Search',
-            empty: 'No results',
-            index: 'en'
-          },
-          'es': {
-            search: 'Buscar',
-            empty: 'No hay datos que coincidan',
-            index: 'es'
-          },
-          'fr-FR': {
-            search: 'Rechercher',
-            empty: 'Aucun résultat',
-            index: 'fr'
           }
         }
       };

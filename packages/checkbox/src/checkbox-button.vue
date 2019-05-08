@@ -1,8 +1,8 @@
 <template>
   <label
-    class="el-checkbox-button"
+    class="sd-checkbox-button"
       :class="[
-        size ? 'el-checkbox-button--' + size : '',
+        size ? 'sd-checkbox-button--' + size : '',
         { 'is-disabled': isDisabled },
         { 'is-checked': isChecked },
         { 'is-focus': focus },
@@ -13,7 +13,7 @@
     >
     <input
       v-if="trueLabel || falseLabel"
-      class="el-checkbox-button__original"
+      class="sd-checkbox-button__original"
       type="checkbox"
       :name="name"
       :disabled="isDisabled"
@@ -25,7 +25,7 @@
       @blur="focus = false">
     <input
       v-else
-      class="el-checkbox-button__original"
+      class="sd-checkbox-button__original"
       type="checkbox"
       :name="name"
       :disabled="isDisabled"
@@ -35,7 +35,7 @@
       @focus="focus = true"
       @blur="focus = false">
 
-    <span class="el-checkbox-button__inner" 
+    <span class="sd-checkbox-button__inner" 
       v-if="$slots.default || label"
       :style="isChecked ? activeStyle : null">
       <slot>{{label}}</slot>
@@ -47,15 +47,15 @@
   import Emitter from 'element-ui/src/mixins/emitter';
 
   export default {
-    name: 'ElCheckboxButton',
+    name: 'SdCheckboxButton',
 
     mixins: [Emitter],
 
     inject: {
-      elForm: {
+      sdForm: {
         default: ''
       },
-      elFormItem: {
+      sdFormItem: {
         default: ''
       }
     },
@@ -97,7 +97,7 @@
               (this.isLimitExceeded = true));
 
             this.isLimitExceeded === false &&
-            this.dispatch('ElCheckboxGroup', 'input', [val]);
+            this.dispatch('SdCheckboxGroup', 'input', [val]);
           } else if (this.value !== undefined) {
             this.$emit('input', val);
           } else {
@@ -119,7 +119,7 @@
       _checkboxGroup() {
         let parent = this.$parent;
         while (parent) {
-          if (parent.$options.componentName !== 'ElCheckboxGroup') {
+          if (parent.$options.componentName !== 'SdCheckboxGroup') {
             parent = parent.$parent;
           } else {
             return parent;
@@ -143,7 +143,7 @@
       },
 
       _elFormItemSize() {
-        return (this.elFormItem || {}).elFormItemSize;
+        return (this.sdFormItem || {}).sdFormItemSize;
       },
 
       size() {
@@ -152,8 +152,8 @@
 
       isDisabled() {
         return this._checkboxGroup
-          ? this._checkboxGroup.disabled || this.disabled || (this.elForm || {}).disabled
-          : this.disabled || (this.elForm || {}).disabled;
+          ? this._checkboxGroup.disabled || this.disabled || (this.sdForm || {}).disabled
+          : this.disabled || (this.sdForm || {}).disabled;
       }
     },
     methods: {
@@ -178,7 +178,7 @@
         this.$emit('change', value, ev);
         this.$nextTick(() => {
           if (this._checkboxGroup) {
-            this.dispatch('ElCheckboxGroup', 'change', [this._checkboxGroup.value]);
+            this.dispatch('SdCheckboxGroup', 'change', [this._checkboxGroup.value]);
           }
         });
       }

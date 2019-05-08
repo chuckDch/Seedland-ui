@@ -1,6 +1,6 @@
 <template>
   <div
-    class="el-tab-pane"
+    class="sd-tab-pane"
     v-if="(!lazy || loaded) || active"
     v-show="active"
     role="tabpanel"
@@ -13,9 +13,9 @@
 </template>
 <script>
   export default {
-    name: 'ElTabPane',
+    name: 'SdTabPane',
 
-    componentName: 'ElTabPane',
+    componentName: 'SdTabPane',
 
     props: {
       label: String,

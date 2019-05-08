@@ -28,7 +28,7 @@
   };
 
   export default {
-    name: 'ElCascaderMenu',
+    name: 'SdCascaderMenu',
 
     data() {
       return {
@@ -270,8 +270,8 @@
           return (
             <li
               class={{
-                'el-cascader-menu__item': true,
-                'el-cascader-menu__item--extensible': item.children,
+                'sd-cascader-menu__item': true,
+                'sd-cascader-menu__item--extensible': item.children,
                 'is-active': item.value === activeValue[menuIndex],
                 'is-disabled': item.disabled
               }}
@@ -307,8 +307,8 @@
         return (
           <ul
             class={{
-              'el-cascader-menu': true,
-              'el-cascader-menu--flexible': isFlat
+              'sd-cascader-menu': true,
+              'sd-cascader-menu--flexible': isFlat
             }}
             {...hoverMenuEvent}
             style={menuStyle}
@@ -356,11 +356,11 @@
       }
 
       return (
-        <transition name="el-zoom-in-top" on-before-enter={this.handleMenuEnter} on-after-leave={this.handleMenuLeave}>
+        <transition name="sd-zoom-in-top" on-before-enter={this.handleMenuEnter} on-after-leave={this.handleMenuLeave}>
           <div
             v-show={visible}
             class={[
-              'el-cascader-menus el-popper',
+              'sd-cascader-menus sd-popper',
               popperClass
             ]}
             ref="wrapper"

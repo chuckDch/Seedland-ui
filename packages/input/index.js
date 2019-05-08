@@ -1,8 +1,8 @@
-import ElInput from './src/input';
+import SdInput from './src/input';
 
 /* istanbul ignore next */
-ElInput.install = function(Vue) {
-  Vue.component(ElInput.name, ElInput);
+SdInput.install = function(Vue) {
+  Vue.component(SdInput.name, SdInput);
 };
 
-export default ElInput;
+export default SdInput;

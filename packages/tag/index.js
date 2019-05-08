@@ -1,8 +1,8 @@
-import ElTag from './src/tag';
+import SdTag from './src/tag';
 
 /* istanbul ignore next */
-ElTag.install = function(Vue) {
-  Vue.component(ElTag.name, ElTag);
+SdTag.install = function(Vue) {
+  Vue.component(SdTag.name, SdTag);
 };
 
-export default ElTag;
+export default SdTag;

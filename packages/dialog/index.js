@@ -1,8 +1,8 @@
-import ElDialog from './src/component';
+import SdDialog from './src/component';
 
 /* istanbul ignore next */
-ElDialog.install = function(Vue) {
-  Vue.component(ElDialog.name, ElDialog);
+SdDialog.install = function(Vue) {
+  Vue.component(SdDialog.name, SdDialog);
 };
 
-export default ElDialog;
+export default SdDialog;

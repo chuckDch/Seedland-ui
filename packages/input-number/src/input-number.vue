@@ -2,31 +2,31 @@
   <div
     @dragstart.prevent
     :class="[
-      'el-input-number',
-      inputNumberSize ? 'el-input-number--' + inputNumberSize : '',
+      'sd-input-number',
+      inputNumberSize ? 'sd-input-number--' + inputNumberSize : '',
       { 'is-disabled': inputNumberDisabled },
       { 'is-without-controls': !controls },
       { 'is-controls-right': controlsAtRight }
     ]">
     <span
-      class="el-input-number__decrease"
+      class="sd-input-number__decrease"
       role="button"
       v-if="controls"
       v-repeat-click="decrease"
       :class="{'is-disabled': minDisabled}"
       @keydown.enter="decrease">
-      <i :class="`el-icon-${controlsAtRight ? 'arrow-down' : 'minus'}`"></i>
+      <i :class="`sd-icon-${controlsAtRight ? 'arrow-down' : 'minus'}`"></i>
     </span>
     <span
-      class="el-input-number__increase"
+      class="sd-input-number__increase"
       role="button"
       v-if="controls"
       v-repeat-click="increase"
       :class="{'is-disabled': maxDisabled}"
       @keydown.enter="increase">
-      <i :class="`el-icon-${controlsAtRight ? 'arrow-up' : 'plus'}`"></i>
+      <i :class="`sd-icon-${controlsAtRight ? 'arrow-up' : 'plus'}`"></i>
     </span>
-    <el-input
+    <sd-input
       ref="input"
       :value="displayValue"
       :placeholder="placeholder"
@@ -42,22 +42,22 @@
       @focus="handleFocus"
       @input="handleInput"
       @change="handleInputChange">
-    </el-input>
+    </sd-input>
   </div>
 </template>
 <script>
-  import ElInput from 'element-ui/packages/input';
+  import SdInput from 'element-ui/packages/input';
   import Focus from 'element-ui/src/mixins/focus';
   import RepeatClick from 'element-ui/src/directives/repeat-click';
 
   export default {
-    name: 'ElInputNumber',
+    name: 'SdInputNumber',
     mixins: [Focus('input')],
     inject: {
-      elForm: {
+      sdForm: {
         default: ''
       },
-      elFormItem: {
+      sdFormItem: {
         default: ''
       }
     },
@@ -65,7 +65,7 @@
       repeatClick: RepeatClick
     },
     components: {
-      ElInput
+      SdInput
     },
     props: {
       step: {
@@ -151,7 +151,7 @@
         const stepPrecision = getPrecision(step);
         if (precision !== undefined) {
           if (stepPrecision > precision) {
-            console.warn('[Element Warn][InputNumber]precision should not be less than the decimal places of step');
+            console.warn('[Seedland Warn][InputNumber]precision should not be less than the decimal places of step');
           }
           return precision;
         } else {
@@ -162,13 +162,13 @@
         return this.controls && this.controlsPosition === 'right';
       },
       _elFormItemSize() {
-        return (this.elFormItem || {}).elFormItemSize;
+        return (this.sdFormItem || {}).sdFormItemSize;
       },
       inputNumberSize() {
         return this.size || this._elFormItemSize || (this.$ELEMENT || {}).size;
       },
       inputNumberDisabled() {
-        return this.disabled || (this.elForm || {}).disabled;
+        return this.disabled || (this.sdForm || {}).disabled;
       },
       displayValue() {
         if (this.userInput !== null) {

@@ -1,8 +1,8 @@
 <template>
-  <el-color-picker
+  <sd-color-picker
     class="theme-picker"
     popper-class="theme-picker-dropdown"
-    v-model="theme"></el-color-picker>
+    v-model="theme"></sd-color-picker>
 </template>
 
 <style lang="scss">
@@ -12,11 +12,11 @@
     // @utils-vertical-center;
   }
 
-  .theme-picker .el-color-picker__trigger {
+  .theme-picker .sd-color-picker__trigger {
     vertical-align: middle;
   }
   
-  .theme-picker-dropdown .el-color-dropdown__link-btn {
+  .theme-picker-dropdown .sd-color-dropdown__link-btn {
     display: none;
   }
 </style>

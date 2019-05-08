@@ -1,32 +1,32 @@
 <template>
-  <transition name="el-zoom-in-top" @after-leave="doDestroy">
+  <transition name="sd-zoom-in-top" @after-leave="doDestroy">
     <div
       v-show="showPopper"
-      class="el-autocomplete-suggestion el-popper"
+      class="sd-autocomplete-suggestion sd-popper"
       :class="{ 'is-loading': !parent.hideLoading && parent.loading }"
       :style="{ width: dropdownWidth }"
       role="region">
-      <el-scrollbar
+      <sd-scrollbar
         tag="ul"
-        wrap-class="el-autocomplete-suggestion__wrap"
-        view-class="el-autocomplete-suggestion__list">
-        <li v-if="!parent.hideLoading && parent.loading"><i class="el-icon-loading"></i></li>
+        wrap-class="sd-autocomplete-suggestion__wrap"
+        view-class="sd-autocomplete-suggestion__list">
+        <li v-if="!parent.hideLoading && parent.loading"><i class="sd-icon-loading"></i></li>
         <slot v-else>
         </slot>
-      </el-scrollbar>
+      </sd-scrollbar>
     </div>
   </transition>
 </template>
 <script>
   import Popper from 'element-ui/src/utils/vue-popper';
   import Emitter from 'element-ui/src/mixins/emitter';
-  import ElScrollbar from 'element-ui/packages/scrollbar';
+  import SdScrollbar from 'element-ui/packages/scrollbar';
 
   export default {
-    components: { ElScrollbar },
+    components: { SdScrollbar },
     mixins: [Popper, Emitter],
 
-    componentName: 'ElAutocompleteSuggestions',
+    componentName: 'SdAutocompleteSuggestions',
 
     data() {
       return {
@@ -48,7 +48,7 @@
 
     methods: {
       select(item) {
-        this.dispatch('ElAutocomplete', 'item-click', item);
+        this.dispatch('SdAutocomplete', 'item-click', item);
       }
     },
 
@@ -61,7 +61,7 @@
     mounted() {
       this.$parent.popperElm = this.popperElm = this.$el;
       this.referenceElm = this.$parent.$refs.input.$refs.input;
-      this.referenceList = this.$el.querySelector('.el-autocomplete-suggestion__list');
+      this.referenceList = this.$el.querySelector('.sd-autocomplete-suggestion__list');
       this.referenceList.setAttribute('role', 'listbox');
       this.referenceList.setAttribute('id', this.id);
     },

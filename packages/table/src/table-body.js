@@ -1,18 +1,18 @@
 import { getCell, getColumnByCell, getRowIdentity } from './util';
 import { getStyle, hasClass, removeClass, addClass } from 'element-ui/src/utils/dom';
-import ElCheckbox from 'element-ui/packages/checkbox';
-import ElTooltip from 'element-ui/packages/tooltip';
+import SdCheckbox from 'element-ui/packages/checkbox';
+import SdTooltip from 'element-ui/packages/tooltip';
 import debounce from 'throttle-debounce/debounce';
 import LayoutObserver from './layout-observer';
 
 export default {
-  name: 'ElTableBody',
+  name: 'SdTableBody',
 
   mixins: [LayoutObserver],
 
   components: {
-    ElCheckbox,
-    ElTooltip
+    SdCheckbox,
+    SdTooltip
   },
 
   props: {
@@ -54,7 +54,7 @@ export default {
     }
     return (
       <table
-        class="el-table__body"
+        class="sd-table__body"
         cellspacing="0"
         cellpadding="0"
         border="0">
@@ -70,7 +70,7 @@ export default {
               const treeNode = this.treeData[rowKey];
               const rowClasses = this.getRowClass(row, $index);
               if (treeNode) {
-                rowClasses.push('el-table__row--level-' + treeNode.level);
+                rowClasses.push('sd-table__row--level-' + treeNode.level);
               }
               const tr = (<tr
                 v-show={ treeNode ? treeNode.display : true }
@@ -135,7 +135,7 @@ export default {
                 return [
                   tr,
                   <tr>
-                    <td colspan={ this.columns.length } class="el-table__expanded-cell">
+                    <td colspan={ this.columns.length } class="sd-table__expanded-cell">
                       { this.table.renderExpanded ? this.table.renderExpanded(h, { row, $index, store: this.store }) : ''}
                     </td>
                   </tr>
@@ -144,7 +144,7 @@ export default {
                 return tr;
               }
             }).concat(
-              <el-tooltip effect={ this.table.tooltipEffect } placement="top" ref="tooltip" content={ this.tooltipContent }></el-tooltip>
+              <sd-tooltip effect={ this.table.tooltipEffect } placement="top" ref="tooltip" content={ this.tooltipContent }></sd-tooltip>
             )
           }
         </tbody>
@@ -212,7 +212,7 @@ export default {
     // update DOM manually. see https://github.com/ElemeFE/element/pull/13954/files#diff-9b450c00d0a9dec0ffad5a3176972e40
     'store.states.hoverRow'(newVal, oldVal) {
       if (!this.store.states.isComplex) return;
-      const rows = this.$el.querySelectorAll('.el-table__row');
+      const rows = this.$el.querySelectorAll('.sd-table__row');
       const oldRow = rows[oldVal];
       const newRow = rows[newVal];
       if (oldRow) {
@@ -293,13 +293,13 @@ export default {
     },
 
     getRowClass(row, rowIndex) {
-      const classes = ['el-table__row'];
+      const classes = ['sd-table__row'];
       if (this.table.highlightCurrentRow && row === this.store.states.currentRow) {
         classes.push('current-row');
       }
 
       if (this.stripe && rowIndex % 2 === 1) {
-        classes.push('el-table__row--striped');
+        classes.push('sd-table__row--striped');
       }
       const rowClassName = this.table.rowClassName;
       if (typeof rowClassName === 'string') {
@@ -365,7 +365,7 @@ export default {
 
       // 判断是否text-overflow, 如果是就显示tooltip
       const cellChild = event.target.querySelector('.cell');
-      if (!(hasClass(cellChild, 'el-tooltip') && cellChild.childNodes.length)) {
+      if (!(hasClass(cellChild, 'sd-tooltip') && cellChild.childNodes.length)) {
         return;
       }
       // use range width instead of scrollWidth to determine whether the text is overflowing

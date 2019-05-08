@@ -1,9 +1,9 @@
 <template>
   <section class="config" :key="displayName">
     <div class="config-label">
-      <el-tooltip :content="displayName">
+      <sd-tooltip :content="displayName">
         <span>{{displayKeyName}}</span>
-      </el-tooltip>
+      </sd-tooltip>
     </div>
     <div class="config-content">
       <theme-input 

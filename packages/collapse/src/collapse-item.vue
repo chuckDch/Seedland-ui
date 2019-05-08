@@ -1,17 +1,17 @@
 <template>
-  <div class="el-collapse-item"
+  <div class="sd-collapse-item"
     :class="{'is-active': isActive, 'is-disabled': disabled }">
     <div
       role="tab"
       :aria-expanded="isActive"
-      :aria-controls="`el-collapse-content-${id}`"
-      :aria-describedby ="`el-collapse-content-${id}`"
+      :aria-controls="`sd-collapse-content-${id}`"
+      :aria-describedby ="`sd-collapse-content-${id}`"
     >
       <div
-        class="el-collapse-item__header"
+        class="sd-collapse-item__header"
         @click="handleHeaderClick"
         role="button"
-        :id="`el-collapse-head-${id}`"
+        :id="`sd-collapse-head-${id}`"
         :tabindex="disabled ? undefined : 0"
         @keyup.space.enter.stop="handleEnterClick"
         :class="{
@@ -23,40 +23,40 @@
       >
         <slot name="title">{{title}}</slot>
         <i
-          class="el-collapse-item__arrow el-icon-arrow-right"
+          class="sd-collapse-item__arrow sd-icon-arrow-right"
           :class="{'is-active': isActive}">
         </i>
       </div>
     </div>
-    <el-collapse-transition>
+    <sd-collapse-transition>
       <div
-        class="el-collapse-item__wrap"
+        class="sd-collapse-item__wrap"
         v-show="isActive"
         role="tabpanel"
         :aria-hidden="!isActive"
-        :aria-labelledby="`el-collapse-head-${id}`"
-        :id="`el-collapse-content-${id}`"
+        :aria-labelledby="`sd-collapse-head-${id}`"
+        :id="`sd-collapse-content-${id}`"
       >
-        <div class="el-collapse-item__content">
+        <div class="sd-collapse-item__content">
           <slot></slot>
         </div>
       </div>
-    </el-collapse-transition>
+    </sd-collapse-transition>
   </div>
 </template>
 <script>
-  import ElCollapseTransition from 'element-ui/src/transitions/collapse-transition';
+  import SdCollapseTransition from 'element-ui/src/transitions/collapse-transition';
   import Emitter from 'element-ui/src/mixins/emitter';
   import { generateId } from 'element-ui/src/utils/util';
 
   export default {
-    name: 'ElCollapseItem',
+    name: 'SdCollapseItem',
 
-    componentName: 'ElCollapseItem',
+    componentName: 'SdCollapseItem',
 
     mixins: [Emitter],
 
-    components: { ElCollapseTransition },
+    components: { SdCollapseTransition },
 
     data() {
       return {
@@ -102,12 +102,12 @@
       },
       handleHeaderClick() {
         if (this.disabled) return;
-        this.dispatch('ElCollapse', 'item-click', this);
+        this.dispatch('SdCollapse', 'item-click', this);
         this.focusing = false;
         this.isClick = true;
       },
       handleEnterClick() {
-        this.dispatch('ElCollapse', 'item-click', this);
+        this.dispatch('SdCollapse', 'item-click', this);
       }
     }
   };

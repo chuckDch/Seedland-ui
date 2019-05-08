@@ -3,7 +3,7 @@
     height: calc(100% - 80px);
     margin-top: 80px;
 
-    .el-scrollbar__wrap {
+    .sd-scrollbar__wrap {
       overflow-x: auto;
     }
   }
@@ -24,7 +24,7 @@
       margin-top: 80px;
       transition: padding-top .3s;
 
-      .el-scrollbar__wrap {
+      .sd-scrollbar__wrap {
         height: 100%;
       }
 
@@ -164,14 +164,13 @@
   }
 </style>
 <template>
-  <el-scrollbar class="page-component__scroll" ref="componentScrollBar">
+  <sd-scrollbar class="page-component__scroll" ref="componentScrollBar">
   <div class="page-container page-component">
-    <el-scrollbar class="page-component__nav">
+    <sd-scrollbar class="page-component__nav">
       <side-nav :data="navsData[lang]" :base="`/${ lang }/component`"></side-nav>
-    </el-scrollbar>
+    </sd-scrollbar>
     <div class="page-component__content">
       <router-view class="content"></router-view>
-      <footer-nav></footer-nav>
     </div>
     <transition name="back-top-fade">
       <div
@@ -181,11 +180,11 @@
         @mouseenter="hover = true"
         @mouseleave="hover = false"
         @click="toTop">
-        <i class="el-icon-caret-top"></i>
+        <i class="sd-icon-caret-top"></i>
       </div>
     </transition>
   </div>
-  </el-scrollbar>
+  </sd-scrollbar>
 </template>
 <script>
   import bus from '../../bus';
@@ -266,7 +265,7 @@
     },
     mounted() {
       this.componentScrollBar = this.$refs.componentScrollBar;
-      this.componentScrollBox = this.componentScrollBar.$el.querySelector('.el-scrollbar__wrap');
+      this.componentScrollBox = this.componentScrollBar.$el.querySelector('.sd-scrollbar__wrap');
       this.throttledScrollHandler = throttle(300, this.handleScroll);
       this.componentScrollBox.addEventListener('scroll', this.throttledScrollHandler);
       this.renderAnchorHref();

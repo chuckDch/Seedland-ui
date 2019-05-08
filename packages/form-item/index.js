@@ -1,8 +1,8 @@
-import ElFormItem from '../form/src/form-item';
+import SdFormItem from '../form/src/form-item';
 
 /* istanbul ignore next */
-ElFormItem.install = function(Vue) {
-  Vue.component(ElFormItem.name, ElFormItem);
+SdFormItem.install = function(Vue) {
+  Vue.component(SdFormItem.name, SdFormItem);
 };
 
-export default ElFormItem;
+export default SdFormItem;

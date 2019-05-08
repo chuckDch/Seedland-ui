@@ -2,14 +2,14 @@
   import Emitter from 'element-ui/src/mixins/emitter';
 
   export default {
-    name: 'ElCheckboxGroup',
+    name: 'SdCheckboxGroup',
 
-    componentName: 'ElCheckboxGroup',
+    componentName: 'SdCheckboxGroup',
 
     mixins: [Emitter],
 
     inject: {
-      elFormItem: {
+      sdFormItem: {
         default: ''
       }
     },
@@ -26,7 +26,7 @@
 
     computed: {
       _elFormItemSize() {
-        return (this.elFormItem || {}).elFormItemSize;
+        return (this.sdFormItem || {}).sdFormItemSize;
       },
       checkboxGroupSize() {
         return this.size || this._elFormItemSize || (this.$ELEMENT || {}).size;
@@ -35,14 +35,14 @@
 
     watch: {
       value(value) {
-        this.dispatch('ElFormItem', 'el.form.change', [value]);
+        this.dispatch('SdFormItem', 'el.form.change', [value]);
       }
     }
   };
 </script>
 
 <template>
-  <div class="el-checkbox-group" role="group" aria-label="checkbox-group">
+  <div class="sd-checkbox-group" role="group" aria-label="checkbox-group">
     <slot></slot>
   </div>
 </template>

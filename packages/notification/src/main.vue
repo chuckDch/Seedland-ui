@@ -1,7 +1,7 @@
 <template>
-  <transition name="el-notification-fade">
+  <transition name="sd-notification-fade">
     <div
-      :class="['el-notification', customClass, horizontalClass]"
+      :class="['sd-notification', customClass, horizontalClass]"
       v-show="visible"
       :style="positionStyle"
       @mouseenter="clearTimer()"
@@ -10,20 +10,20 @@
       role="alert"
     >
       <i
-        class="el-notification__icon"
+        class="sd-notification__icon"
         :class="[ typeClass, iconClass ]"
         v-if="type || iconClass">
       </i>
-      <div class="el-notification__group" :class="{ 'is-with-icon': typeClass || iconClass }">
-        <h2 class="el-notification__title" v-text="title"></h2>
-        <div class="el-notification__content" v-show="message">
+      <div class="sd-notification__group" :class="{ 'is-with-icon': typeClass || iconClass }">
+        <h2 class="sd-notification__title" v-text="title"></h2>
+        <div class="sd-notification__content" v-show="message">
           <slot>
             <p v-if="!dangerouslyUseHTMLString">{{ message }}</p>
             <p v-else v-html="message"></p>
           </slot>
         </div>
         <div
-          class="el-notification__closeBtn el-icon-close"
+          class="sd-notification__closeBtn sd-icon-close"
           v-if="showClose"
           @click.stop="close"></div>
       </div>
@@ -62,7 +62,7 @@
 
     computed: {
       typeClass() {
-        return this.type && typeMap[this.type] ? `el-icon-${ typeMap[this.type] }` : '';
+        return this.type && typeMap[this.type] ? `sd-icon-${ typeMap[this.type] }` : '';
       },
 
       horizontalClass() {

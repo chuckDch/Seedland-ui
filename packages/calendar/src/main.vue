@@ -1,36 +1,36 @@
 <template>
-  <div class="el-calendar">
-    <div class="el-calendar__header">
-      <div class="el-calendar__title">
+  <div class="sd-calendar">
+    <div class="sd-calendar__header">
+      <div class="sd-calendar__title">
         {{ i18nDate }}
       </div>
       <div
-        class="el-calendar__button-group"
+        class="sd-calendar__button-group"
         v-if="validatedRange.length === 0">
-        <el-button-group>
-          <el-button
+        <sd-button-group>
+          <sd-button
             type="plain"
             size="mini"
             @click="selectDate('prev-month')">
             {{ t('el.datepicker.prevMonth') }}
-          </el-button>
-          <el-button
+          </sd-button>
+          <sd-button
             type="plain"
             size="mini"
             @click="selectDate('today')">
             {{ t('el.datepicker.today') }}
-          </el-button>
-          <el-button
+          </sd-button>
+          <sd-button
             type="plain"
             size="mini"
             @click="selectDate('next-month')">
             {{ t('el.datepicker.nextMonth') }}
-          </el-button>
-        </el-button-group>
+          </sd-button>
+        </sd-button-group>
       </div>
     </div>
     <div
-      class="el-calendar__body"
+      class="sd-calendar__body"
       v-if="validatedRange.length === 0"
       key="no-range">
       <date-table
@@ -40,7 +40,7 @@
     </div>
     <div
       v-else
-      class="el-calendar__body"
+      class="sd-calendar__body"
       key="has-range">
       <date-table
         v-for="(range, index) in validatedRange"
@@ -64,7 +64,7 @@ const validTypes = ['prev-month', 'today', 'next-month'];
 const oneDay = 86400000;
 
 export default {
-  name: 'ElCalendar',
+  name: 'SdCalendar',
 
   mixins: [Locale],
 
@@ -91,7 +91,7 @@ export default {
 
   provide() {
     return {
-      elCalendar: this
+      sdCalendar: this
     };
   },
 
@@ -197,7 +197,7 @@ export default {
       range = range.reduce((prev, val, index) => {
         const date = this.toDate(val);
         if (date.getDay() !== expetedMap[index].value) {
-          console.warn('[ElementCalendar]', expetedMap[index].message, ' invalid range will be ignored');
+          console.warn('[SeedlandCalendar]', expetedMap[index].message, ' invalid range will be ignored');
         } else {
           prev = prev.concat(date);
         }
@@ -206,7 +206,7 @@ export default {
       if (range.length === 2) {
         const [start, end] = range;
         if (start > end) {
-          console.warn('[ElementCalendar]end time should be greater than start time');
+          console.warn('[SeedlandCalendar]end time should be greater than start time');
           return [];
         }
         // start time and end time in one month
@@ -219,7 +219,7 @@ export default {
         let startDay = new Date(start.getFullYear(), start.getMonth() + 1, 1);
         const lastDay = this.toDate(startDay.getTime() - oneDay);
         if (!validateRangeInOneMonth(startDay, end)) {
-          console.warn('[ElementCalendar]start time and end time interval must not exceed two months');
+          console.warn('[SeedlandCalendar]start time and end time interval must not exceed two months');
           return [];
         }
         data.push([

@@ -1,12 +1,12 @@
 import Pager from './pager.vue';
-import ElSelect from 'element-ui/packages/select';
-import ElOption from 'element-ui/packages/option';
-import ElInput from 'element-ui/packages/input';
+import SdSelect from 'element-ui/packages/select';
+import SdOption from 'element-ui/packages/option';
+import SdInput from 'element-ui/packages/input';
 import Locale from 'element-ui/src/mixins/locale';
 import { valueEquals } from 'element-ui/src/utils/util';
 
 export default {
-  name: 'ElPagination',
+  name: 'SdPagination',
 
   props: {
     pageSize: {
@@ -71,9 +71,9 @@ export default {
     if (!layout) return null;
     if (this.hideOnSinglePage && (!this.internalPageCount || this.internalPageCount === 1)) return null;
 
-    let template = <div class={['el-pagination', {
+    let template = <div class={['sd-pagination', {
       'is-background': this.background,
-      'el-pagination--small': this.small
+      'sd-pagination--small': this.small
     }] }></div>;
     const TEMPLATE_MAP = {
       prev: <prev></prev>,
@@ -85,7 +85,7 @@ export default {
       total: <total></total>
     };
     const components = layout.split(',').map((item) => item.trim());
-    const rightWrapper = <div class="el-pagination__rightwrapper"></div>;
+    const rightWrapper = <div class="sd-pagination__rightwrapper"></div>;
     let haveRightWrapper = false;
 
     template.children = template.children || [];
@@ -122,7 +122,7 @@ export default {
             {
               this.$parent.prevText
                 ? <span>{ this.$parent.prevText }</span>
-                : <i class="el-icon el-icon-arrow-left"></i>
+                : <i class="sd-icon sd-icon-arrow-left"></i>
             }
           </button>
         );
@@ -140,7 +140,7 @@ export default {
             {
               this.$parent.nextText
                 ? <span>{ this.$parent.nextText }</span>
-                : <i class="el-icon el-icon-arrow-right"></i>
+                : <i class="sd-icon sd-icon-arrow-right"></i>
             }
           </button>
         );
@@ -170,8 +170,8 @@ export default {
 
       render(h) {
         return (
-          <span class="el-pagination__sizes">
-            <el-select
+          <span class="sd-pagination__sizes">
+            <sd-select
               value={ this.$parent.internalPageSize }
               popperClass={ this.$parent.popperClass || '' }
               size="mini"
@@ -179,20 +179,20 @@ export default {
               disabled={ this.$parent.disabled }>
               {
                 this.pageSizes.map(item =>
-                  <el-option
+                  <sd-option
                     value={ item }
                     label={ item + this.t('el.pagination.pagesize') }>
-                  </el-option>
+                  </sd-option>
                 )
               }
-            </el-select>
+            </sd-select>
           </span>
         );
       },
 
       components: {
-        ElSelect,
-        ElOption
+        SdSelect,
+        SdOption
       },
 
       methods: {
@@ -210,7 +210,7 @@ export default {
     Jumper: {
       mixins: [Locale],
 
-      components: { ElInput },
+      components: { SdInput },
 
       data() {
         return {
@@ -245,10 +245,10 @@ export default {
 
       render(h) {
         return (
-          <span class="el-pagination__jump">
+          <span class="sd-pagination__jump">
             { this.t('el.pagination.goto') }
-            <el-input
-              class="el-pagination__editor is-in-pagination"
+            <sd-input
+              class="sd-pagination__editor is-in-pagination"
               min={ 1 }
               max={ this.$parent.internalPageCount }
               value={ this.userInput !== null ? this.userInput : this.$parent.internalCurrentPage }
@@ -269,7 +269,7 @@ export default {
       render(h) {
         return (
           typeof this.$parent.total === 'number'
-            ? <span class="el-pagination__total">{ this.t('el.pagination.total', { total: this.$parent.total }) }</span>
+            ? <span class="sd-pagination__total">{ this.t('el.pagination.total', { total: this.$parent.total }) }</span>
             : ''
         );
       }

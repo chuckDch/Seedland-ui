@@ -1,25 +1,25 @@
 <template>
   <div
     :class="[
-      'el-color-picker',
+      'sd-color-picker',
       colorDisabled ? 'is-disabled' : '',
-      colorSize ? `el-color-picker--${ colorSize }` : ''
+      colorSize ? `sd-color-picker--${ colorSize }` : ''
     ]"
     v-clickoutside="hide">
-    <div class="el-color-picker__mask" v-if="colorDisabled"></div>
-    <div class="el-color-picker__trigger" @click="handleTrigger">
-      <span class="el-color-picker__color" :class="{ 'is-alpha': showAlpha }">
-        <span class="el-color-picker__color-inner"
+    <div class="sd-color-picker__mask" v-if="colorDisabled"></div>
+    <div class="sd-color-picker__trigger" @click="handleTrigger">
+      <span class="sd-color-picker__color" :class="{ 'is-alpha': showAlpha }">
+        <span class="sd-color-picker__color-inner"
           :style="{
             backgroundColor: displayedColor
           }"></span>
-        <span class="el-color-picker__empty el-icon-close" v-if="!value && !showPanelColor"></span>
+        <span class="sd-color-picker__empty sd-icon-close" v-if="!value && !showPanelColor"></span>
       </span>
-      <span class="el-color-picker__icon el-icon-arrow-down" v-show="value || showPanelColor"></span>
+      <span class="sd-color-picker__icon sd-icon-arrow-down" v-show="value || showPanelColor"></span>
     </div>
     <picker-dropdown
        ref="dropdown"
-       :class="['el-color-picker__panel', popperClass || '']"
+       :class="['sd-color-picker__panel', popperClass || '']"
        v-model="showPicker"
        @pick="confirmValue"
        @clear="clearValue"
@@ -37,7 +37,7 @@
   import Emitter from 'element-ui/src/mixins/emitter';
 
   export default {
-    name: 'ElColorPicker',
+    name: 'SdColorPicker',
 
     mixins: [Emitter],
 
@@ -52,10 +52,10 @@
     },
 
     inject: {
-      elForm: {
+      sdForm: {
         default: ''
       },
-      elFormItem: {
+      sdFormItem: {
         default: ''
       }
     },
@@ -72,7 +72,7 @@
       },
 
       _elFormItemSize() {
-        return (this.elFormItem || {}).elFormItemSize;
+        return (this.sdFormItem || {}).sdFormItemSize;
       },
 
       colorSize() {
@@ -80,7 +80,7 @@
       },
 
       colorDisabled() {
-        return this.disabled || (this.elForm || {}).disabled;
+        return this.disabled || (this.sdForm || {}).disabled;
       }
     },
 
@@ -122,14 +122,14 @@
         const value = this.color.value;
         this.$emit('input', value);
         this.$emit('change', value);
-        this.dispatch('ElFormItem', 'el.form.change', value);
+        this.dispatch('SdFormItem', 'el.form.change', value);
         this.showPicker = false;
       },
       clearValue() {
         this.$emit('input', null);
         this.$emit('change', null);
         if (this.value !== null) {
-          this.dispatch('ElFormItem', 'el.form.change', null);
+          this.dispatch('SdFormItem', 'el.form.change', null);
         }
         this.showPanelColor = false;
         this.showPicker = false;

@@ -66,17 +66,17 @@
         </li>
       </ul>
     </section>
-    <el-dialog :visible.sync="copyDialogVisible">
-      <el-form :model="copyForm" ref="copyForm" :rules="copyFormRule">
-        <el-form-item label="<%= 3 >" prop="name">
-          <el-input v-model="copyForm.name"></el-input>
-        </el-form-item>
-      </el-form>
+    <sd-dialog :visible.sync="copyDialogVisible">
+      <sd-form :model="copyForm" ref="copyForm" :rules="copyFormRule">
+        <sd-form-item label="<%= 3 >" prop="name">
+          <sd-input v-model="copyForm.name"></sd-input>
+        </sd-form-item>
+      </sd-form>
       <div slot="footer" class="dialog-footer">
-        <el-button @click="closeCopyForm">{{getActionDisplayName('cancel')}}</el-button>
-        <el-button type="primary" @click="copyToUser">{{getActionDisplayName('confirm')}}</el-button>
+        <sd-button @click="closeCopyForm">{{getActionDisplayName('cancel')}}</sd-button>
+        <sd-button type="primary" @click="copyToUser">{{getActionDisplayName('confirm')}}</sd-button>
       </div>
-    </el-dialog>
+    </sd-dialog>
   </div>
 </template>
 <script>

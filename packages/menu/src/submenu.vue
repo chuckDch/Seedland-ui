@@ -1,5 +1,5 @@
 <script>
-  import ElCollapseTransition from 'element-ui/src/transitions/collapse-transition';
+  import SdCollapseTransition from 'element-ui/src/transitions/collapse-transition';
   import menuMixin from './menu-mixin';
   import Emitter from 'element-ui/src/mixins/emitter';
   import Popper from 'element-ui/src/utils/vue-popper';
@@ -21,13 +21,13 @@
   };
 
   export default {
-    name: 'ElSubmenu',
+    name: 'SdSubmenu',
 
-    componentName: 'ElSubmenu',
+    componentName: 'SdSubmenu',
 
     mixins: [menuMixin, Emitter, poperMixins],
 
-    components: { ElCollapseTransition },
+    components: { SdCollapseTransition },
 
     props: {
       index: {
@@ -76,7 +76,7 @@
           : this.popperAppendToBody;
       },
       menuTransitionName() {
-        return this.rootMenu.collapse ? 'el-zoom-in-left' : 'el-zoom-in-top';
+        return this.rootMenu.collapse ? 'sd-zoom-in-left' : 'sd-zoom-in-top';
       },
       opened() {
         return this.rootMenu.openedMenus.indexOf(this.index) > -1;
@@ -137,7 +137,7 @@
         let isFirstLevel = true;
         let parent = this.$parent;
         while (parent && parent !== this.rootMenu) {
-          if (['ElSubmenu', 'ElMenuItemGroup'].indexOf(parent.$options.componentName) > -1) {
+          if (['SdSubmenu', 'SdMenuItemGroup'].indexOf(parent.$options.componentName) > -1) {
             isFirstLevel = false;
             break;
           } else {
@@ -176,7 +176,7 @@
         ) {
           return;
         }
-        this.dispatch('ElMenu', 'submenu-click', this);
+        this.dispatch('SdMenu', 'submenu-click', this);
       },
       handleMouseenter(event, showTimeout = this.showTimeout) {
 
@@ -191,7 +191,7 @@
         ) {
           return;
         }
-        this.dispatch('ElSubmenu', 'mouse-enter-child');
+        this.dispatch('SdSubmenu', 'mouse-enter-child');
         clearTimeout(this.timeout);
         this.timeout = setTimeout(() => {
           this.rootMenu.openMenu(this.index, this.indexPath);
@@ -205,7 +205,7 @@
         ) {
           return;
         }
-        this.dispatch('ElSubmenu', 'mouse-leave-child');
+        this.dispatch('SdSubmenu', 'mouse-leave-child');
         clearTimeout(this.timeout);
         this.timeout = setTimeout(() => {
           !this.mouseInChild && this.rootMenu.closeMenu(this.index);
@@ -274,13 +274,13 @@
           <div
             ref="menu"
             v-show={opened}
-            class={[`el-menu--${mode}`, popperClass]}
+            class={[`sd-menu--${mode}`, popperClass]}
             on-mouseenter={($event) => this.handleMouseenter($event, 100)}
             on-mouseleave={this.handleMouseleave}
             on-focus={($event) => this.handleMouseenter($event, 100)}>
             <ul
               role="menu"
-              class={['el-menu el-menu--popup', `el-menu--popup-${currentPlacement}`]}
+              class={['sd-menu sd-menu--popup', `sd-menu--popup-${currentPlacement}`]}
               style={{ backgroundColor: rootMenu.backgroundColor || '' }}>
               {$slots.default}
             </ul>
@@ -289,26 +289,26 @@
       );
 
       const inlineMenu = (
-        <el-collapse-transition>
+        <sd-collapse-transition>
           <ul
             role="menu"
-            class="el-menu el-menu--inline"
+            class="sd-menu sd-menu--inline"
             v-show={opened}
             style={{ backgroundColor: rootMenu.backgroundColor || '' }}>
             {$slots.default}
           </ul>
-        </el-collapse-transition>
+        </sd-collapse-transition>
       );
 
       const submenuTitleIcon = (
         rootMenu.mode === 'horizontal' && isFirstLevel ||
         rootMenu.mode === 'vertical' && !rootMenu.collapse
-      ) ? 'el-icon-arrow-down' : 'el-icon-arrow-right';
+      ) ? 'sd-icon-arrow-down' : 'sd-icon-arrow-right';
 
       return (
         <li
           class={{
-            'el-submenu': true,
+            'sd-submenu': true,
             'is-active': active,
             'is-opened': opened,
             'is-disabled': disabled
@@ -321,7 +321,7 @@
           on-focus={this.handleMouseenter}
         >
           <div
-            class="el-submenu__title"
+            class="sd-submenu__title"
             ref="submenu-title"
             on-click={this.handleClick}
             on-mouseenter={this.handleTitleMouseenter}
@@ -329,7 +329,7 @@
             style={[paddingStyle, titleStyle, { backgroundColor }]}
           >
             {$slots.title}
-            <i class={[ 'el-submenu__icon-arrow', submenuTitleIcon ]}></i>
+            <i class={[ 'sd-submenu__icon-arrow', submenuTitleIcon ]}></i>
           </div>
           {this.isMenuPopup ? popupMenu : inlineMenu}
         </li>

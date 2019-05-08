@@ -1,8 +1,8 @@
 <template>
   <label
-    class="el-radio"
+    class="sd-radio"
     :class="[
-      border && radioSize ? 'el-radio--' + radioSize : '',
+      border && radioSize ? 'sd-radio--' + radioSize : '',
       { 'is-disabled': isDisabled },
       { 'is-focus': focus },
       { 'is-bordered': border },
@@ -14,15 +14,15 @@
     :tabindex="tabIndex"
     @keydown.space.stop.prevent="model = isDisabled ? model : label"
   >
-    <span class="el-radio__input"
+    <span class="sd-radio__input"
       :class="{
         'is-disabled': isDisabled,
         'is-checked': model === label
       }"
     >
-      <span class="el-radio__inner"></span>
+      <span class="sd-radio__inner"></span>
       <input
-        class="el-radio__original"
+        class="sd-radio__original"
         :value="label"
         type="radio"
         aria-hidden="true"
@@ -35,7 +35,7 @@
         tabindex="-1"
       >
     </span>
-    <span class="el-radio__label" @keydown.stop>
+    <span class="sd-radio__label" @keydown.stop>
       <slot></slot>
       <template v-if="!$slots.default">{{label}}</template>
     </span>
@@ -45,21 +45,21 @@
   import Emitter from 'element-ui/src/mixins/emitter';
 
   export default {
-    name: 'ElRadio',
+    name: 'SdRadio',
 
     mixins: [Emitter],
 
     inject: {
-      elForm: {
+      sdForm: {
         default: ''
       },
 
-      elFormItem: {
+      sdFormItem: {
         default: ''
       }
     },
 
-    componentName: 'ElRadio',
+    componentName: 'SdRadio',
 
     props: {
       value: {},
@@ -79,7 +79,7 @@
       isGroup() {
         let parent = this.$parent;
         while (parent) {
-          if (parent.$options.componentName !== 'ElRadioGroup') {
+          if (parent.$options.componentName !== 'SdRadioGroup') {
             parent = parent.$parent;
           } else {
             this._radioGroup = parent;
@@ -94,7 +94,7 @@
         },
         set(val) {
           if (this.isGroup) {
-            this.dispatch('ElRadioGroup', 'input', [val]);
+            this.dispatch('SdRadioGroup', 'input', [val]);
           } else {
             this.$emit('input', val);
           }
@@ -123,7 +123,7 @@
       handleChange() {
         this.$nextTick(() => {
           this.$emit('change', this.model);
-          this.isGroup && this.dispatch('ElRadioGroup', 'handleChange', this.model);
+          this.isGroup && this.dispatch('SdRadioGroup', 'handleChange', this.model);
         });
       }
     }

@@ -1,7 +1,7 @@
 export default {
   functional: true,
 
-  name: 'ElDivider',
+  name: 'SdDivider',
 
   props: {
     direction: {
@@ -25,10 +25,10 @@ export default {
     const $slots = context.slots();
     const { direction, contentPosition } = context.props;
     return (
-      <div class={['el-divider', `el-divider--${direction}`]}>
+      <div class={['sd-divider', `sd-divider--${direction}`]}>
         {
           $slots.default && direction !== 'vertical'
-            ? <div class={['el-divider__text', `is-${contentPosition}`]}>{$slots.default}</div>
+            ? <div class={['sd-divider__text', `is-${contentPosition}`]}>{$slots.default}</div>
             : null
         }
       </div>

@@ -1,8 +1,8 @@
 <template>
   <a
     :class="[
-      'el-link',
-      type ? `el-link--${type}` : '',
+      'sd-link',
+      type ? `sd-link--${type}` : '',
       disabled && 'is-disabled',
       underline && !disabled && 'is-underline'
     ]"
@@ -11,9 +11,9 @@
     @click="handleClick"
   >
 
-    <el-icon :class="icon" v-if="icon"></el-icon>
+    <sd-icon :class="icon" v-if="icon"></sd-icon>
 
-    <span v-if="$slots.default" class="el-link--inner">
+    <span v-if="$slots.default" class="sd-link--inner">
       <slot></slot>
     </span>
 
@@ -24,7 +24,7 @@
 <script>
 
 export default {
-  name: 'ElLink',
+  name: 'SdLink',
 
   props: {
     type: {

@@ -1,5 +1,5 @@
 <template>
-  <ul class="el-timeline"
+  <ul class="sd-timeline"
     :class="{
       'is-reverse': reverse
     }">
@@ -9,7 +9,7 @@
 
 <script>
   export default {
-    name: 'ElTimeline',
+    name: 'SdTimeline',
 
     props: {
       reverse: {

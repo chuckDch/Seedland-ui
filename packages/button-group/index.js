@@ -1,8 +1,8 @@
-import ElButtonGroup from '../button/src/button-group';
+import SdButtonGroup from '../button/src/button-group';
 
 /* istanbul ignore next */
-ElButtonGroup.install = function(Vue) {
-  Vue.component(ElButtonGroup.name, ElButtonGroup);
+SdButtonGroup.install = function(Vue) {
+  Vue.component(SdButtonGroup.name, SdButtonGroup);
 };
 
-export default ElButtonGroup;
+export default SdButtonGroup;

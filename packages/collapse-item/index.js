@@ -1,8 +1,8 @@
-import ElCollapseItem from '../collapse/src/collapse-item.vue';
+import SdCollapseItem from '../collapse/src/collapse-item.vue';
 
 /* istanbul ignore next */
-ElCollapseItem.install = function(Vue) {
-  Vue.component(ElCollapseItem.name, ElCollapseItem);
+SdCollapseItem.install = function(Vue) {
+  Vue.component(SdCollapseItem.name, SdCollapseItem);
 };
 
-export default ElCollapseItem;
+export default SdCollapseItem;

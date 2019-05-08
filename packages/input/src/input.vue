@@ -1,15 +1,15 @@
 <template>
   <div :class="[
-    type === 'textarea' ? 'el-textarea' : 'el-input',
-    inputSize ? 'el-input--' + inputSize : '',
+    type === 'textarea' ? 'sd-textarea' : 'sd-input',
+    inputSize ? 'sd-input--' + inputSize : '',
     {
       'is-disabled': inputDisabled,
       'is-exceed': inputExceed,
-      'el-input-group': $slots.prepend || $slots.append,
-      'el-input-group--append': $slots.append,
-      'el-input-group--prepend': $slots.prepend,
-      'el-input--prefix': $slots.prefix || prefixIcon,
-      'el-input--suffix': $slots.suffix || suffixIcon || clearable || showPassword
+      'sd-input-group': $slots.prepend || $slots.append,
+      'sd-input-group--append': $slots.append,
+      'sd-input-group--prepend': $slots.prepend,
+      'sd-input--prefix': $slots.prefix || prefixIcon,
+      'sd-input--suffix': $slots.suffix || suffixIcon || clearable || showPassword
     }
     ]"
     @mouseenter="hovering = true"
@@ -17,13 +17,13 @@
   >
     <template v-if="type !== 'textarea'">
       <!-- 前置元素 -->
-      <div class="el-input-group__prepend" v-if="$slots.prepend">
+      <div class="sd-input-group__prepend" v-if="$slots.prepend">
         <slot name="prepend"></slot>
       </div>
       <input
         :tabindex="tabindex"
         v-if="type !== 'textarea'"
-        class="el-input__inner"
+        class="sd-input__inner"
         v-bind="$attrs"
         :type="showPassword ? (passwordVisible ? 'text': 'password') : type"
         :disabled="inputDisabled"
@@ -39,53 +39,53 @@
         :aria-label="label"
       >
       <!-- 前置内容 -->
-      <span class="el-input__prefix" v-if="$slots.prefix || prefixIcon">
+      <span class="sd-input__prefix" v-if="$slots.prefix || prefixIcon">
         <slot name="prefix"></slot>
-        <i class="el-input__icon"
+        <i class="sd-input__icon"
            v-if="prefixIcon"
            :class="prefixIcon">
         </i>
       </span>
       <!-- 后置内容 -->
       <span
-        class="el-input__suffix"
+        class="sd-input__suffix"
         v-if="getSuffixVisible()">
-        <span class="el-input__suffix-inner">
+        <span class="sd-input__suffix-inner">
           <template v-if="!showClear || !showPwdVisible || !isWordLimitVisible">
             <slot name="suffix"></slot>
-            <i class="el-input__icon"
+            <i class="sd-input__icon"
               v-if="suffixIcon"
               :class="suffixIcon">
             </i>
           </template>
           <i v-if="showClear"
-            class="el-input__icon el-icon-circle-close el-input__clear"
+            class="sd-input__icon sd-icon-circle-close sd-input__clear"
             @click="clear"
           ></i>
           <i v-if="showPwdVisible"
-            class="el-input__icon el-icon-view el-input__clear"
+            class="sd-input__icon sd-icon-view sd-input__clear"
             @click="handlePasswordVisible"
           ></i>
-          <span v-if="isWordLimitVisible" class="el-input__count">
-            <span class="el-input__count-inner">
+          <span v-if="isWordLimitVisible" class="sd-input__count">
+            <span class="sd-input__count-inner">
               {{ textLength }}/{{ upperLimit }}
             </span>
           </span>
         </span>
-        <i class="el-input__icon"
+        <i class="sd-input__icon"
           v-if="validateState"
-          :class="['el-input__validateIcon', validateIcon]">
+          :class="['sd-input__validateIcon', validateIcon]">
         </i>
       </span>
       <!-- 后置元素 -->
-      <div class="el-input-group__append" v-if="$slots.append">
+      <div class="sd-input-group__append" v-if="$slots.append">
         <slot name="append"></slot>
       </div>
     </template>
     <textarea
       v-else
       :tabindex="tabindex"
-      class="el-textarea__inner"
+      class="sd-textarea__inner"
       @compositionstart="handleCompositionStart"
       @compositionend="handleCompositionEnd"
       @input="handleInput"
@@ -101,7 +101,7 @@
       :aria-label="label"
     >
     </textarea>
-    <span v-if="isWordLimitVisible && type === 'textarea'" class="el-input__count">{{ textLength }}/{{ upperLimit }}</span>
+    <span v-if="isWordLimitVisible && type === 'textarea'" class="sd-input__count">{{ textLength }}/{{ upperLimit }}</span>
   </div>
 </template>
 <script>
@@ -111,19 +111,19 @@
   import merge from 'element-ui/src/utils/merge';
 
   export default {
-    name: 'ElInput',
+    name: 'SdInput',
 
-    componentName: 'ElInput',
+    componentName: 'SdInput',
 
     mixins: [emitter, Migrating],
 
     inheritAttrs: false,
 
     inject: {
-      elForm: {
+      sdForm: {
         default: ''
       },
-      elFormItem: {
+      sdFormItem: {
         default: ''
       }
     },
@@ -162,7 +162,7 @@
         type: String,
         validator(val) {
           process.env.NODE_ENV !== 'production' &&
-            console.warn('[Element Warn][Input]\'auto-complete\' property will be deprecated in next major version. please use \'autocomplete\' instead.');
+            console.warn('[seeland Warn][Input]\'auto-complete\' property will be deprecated in next major version. please use \'autocomplete\' instead.');
           return true;
         }
       },
@@ -190,19 +190,19 @@
 
     computed: {
       _elFormItemSize() {
-        return (this.elFormItem || {}).elFormItemSize;
+        return (this.sdFormItem || {}).sdFormItemSize;
       },
       validateState() {
-        return this.elFormItem ? this.elFormItem.validateState : '';
+        return this.sdFormItem ? this.sdFormItem.validateState : '';
       },
       needStatusIcon() {
-        return this.elForm ? this.elForm.statusIcon : false;
+        return this.sdForm ? this.sdForm.statusIcon : false;
       },
       validateIcon() {
         return {
-          validating: 'el-icon-loading',
-          success: 'el-icon-circle-check',
-          error: 'el-icon-circle-close'
+          validating: 'sd-icon-loading',
+          success: 'sd-icon-circle-check',
+          error: 'sd-icon-circle-close'
         }[this.validateState];
       },
       textareaStyle() {
@@ -212,7 +212,7 @@
         return this.size || this._elFormItemSize || (this.$ELEMENT || {}).size;
       },
       inputDisabled() {
-        return this.disabled || (this.elForm || {}).disabled;
+        return this.disabled || (this.sdForm || {}).disabled;
       },
       nativeInputValue() {
         return this.value === null || this.value === undefined ? '' : String(this.value);
@@ -259,7 +259,7 @@
       value(val) {
         this.$nextTick(this.resizeTextarea);
         if (this.validateEvent) {
-          this.dispatch('ElFormItem', 'el.form.change', [val]);
+          this.dispatch('SdFormItem', 'el.form.change', [val]);
         }
       },
       // native input value is set explicitly
@@ -302,7 +302,7 @@
         this.focused = false;
         this.$emit('blur', event);
         if (this.validateEvent) {
-          this.dispatch('ElFormItem', 'el.form.blur', [this.value]);
+          this.dispatch('SdFormItem', 'el.form.blur', [this.value]);
         }
       },
       select() {
@@ -359,7 +359,7 @@
         this.$emit('change', event.target.value);
       },
       calcIconOffset(place) {
-        let elList = [].slice.call(this.$el.querySelectorAll(`.el-input__${place}`) || []);
+        let elList = [].slice.call(this.$el.querySelectorAll(`.sd-input__${place}`) || []);
         if (!elList.length) return;
         let el = null;
         for (let i = 0; i < elList.length; i++) {
@@ -376,7 +376,7 @@
 
         const pendant = pendantMap[place];
         if (this.$slots[pendant]) {
-          el.style.transform = `translateX(${place === 'suffix' ? '-' : ''}${this.$el.querySelector(`.el-input-group__${pendant}`).offsetWidth}px)`;
+          el.style.transform = `translateX(${place === 'suffix' ? '-' : ''}${this.$el.querySelector(`.sd-input-group__${pendant}`).offsetWidth}px)`;
         } else {
           el.removeAttribute('style');
         }

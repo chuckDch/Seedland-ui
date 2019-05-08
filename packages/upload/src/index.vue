@@ -1,18 +1,18 @@
 <script>
 import UploadList from './upload-list';
 import Upload from './upload';
-import ElProgress from 'element-ui/packages/progress';
+import SdProgress from 'element-ui/packages/progress';
 import Migrating from 'element-ui/src/mixins/migrating';
 
 function noop() {}
 
 export default {
-  name: 'ElUpload',
+  name: 'SdUpload',
 
   mixins: [Migrating],
 
   components: {
-    ElProgress,
+    SdProgress,
     UploadList,
     Upload
   },
@@ -24,7 +24,7 @@ export default {
   },
 
   inject: {
-    elForm: {
+    sdForm: {
       default: ''
     }
   },
@@ -117,7 +117,7 @@ export default {
 
   computed: {
     uploadDisabled() {
-      return this.disabled || (this.elForm || {}).disabled;
+      return this.disabled || (this.sdForm || {}).disabled;
     }
   },
 
@@ -129,7 +129,7 @@ export default {
             try {
               file.url = URL.createObjectURL(file.raw);
             } catch (err) {
-              console.error('[Element Error][Upload]', err);
+              console.error('[Seedland Error][Upload]', err);
             }
           }
           return file;
@@ -164,7 +164,7 @@ export default {
         try {
           file.url = URL.createObjectURL(rawFile);
         } catch (err) {
-          console.error('[Element Error][Upload]', err);
+          console.error('[Seedland Error][Upload]', err);
           return;
         }
       }

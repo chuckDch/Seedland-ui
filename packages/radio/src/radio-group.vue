@@ -1,6 +1,6 @@
 <template>
   <div
-    class="el-radio-group"
+    class="sd-radio-group"
     role="radiogroup"
     @keydown="handleKeydown"
   >
@@ -17,9 +17,9 @@
     DOWN: 40
   });
   export default {
-    name: 'ElRadioGroup',
+    name: 'SdRadioGroup',
 
-    componentName: 'ElRadioGroup',
+    componentName: 'SdRadioGroup',
 
     inject: {
       elFormItem: {
@@ -99,7 +99,7 @@
     },
     watch: {
       value(value) {
-        this.dispatch('ElFormItem', 'el.form.change', [this.value]);
+        this.dispatch('SdFormItem', 'el.form.change', [this.value]);
       }
     }
   };

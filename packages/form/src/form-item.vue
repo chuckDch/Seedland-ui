@@ -1,34 +1,34 @@
 <template>
-  <div class="el-form-item" :class="[{
-      'el-form-item--feedback': elForm && elForm.statusIcon,
+  <div class="sd-form-item" :class="[{
+      'sd-form-item--feedback': sdForm && sdForm.statusIcon,
       'is-error': validateState === 'error',
       'is-validating': validateState === 'validating',
       'is-success': validateState === 'success',
       'is-required': isRequired || required,
-      'is-no-asterisk': elForm && elForm.hideRequiredAsterisk
+      'is-no-asterisk': sdForm && sdForm.hideRequiredAsterisk
     },
-    sizeClass ? 'el-form-item--' + sizeClass : ''
+    sizeClass ? 'sd-form-item--' + sizeClass : ''
   ]">
     <label-wrap
       :is-auto-width="labelStyle && labelStyle.width === 'auto'"
       :update-all="form.labelWidth === 'auto'">
-      <label :for="labelFor" class="el-form-item__label" :style="labelStyle" v-if="label || $slots.label">
+      <label :for="labelFor" class="sd-form-item__label" :style="labelStyle" v-if="label || $slots.label">
         <slot name="label">{{label + form.labelSuffix}}</slot>
       </label>
     </label-wrap>
-    <div class="el-form-item__content" :style="contentStyle">
+    <div class="sd-form-item__content" :style="contentStyle">
       <slot></slot>
-      <transition name="el-zoom-in-top">
+      <transition name="sd-zoom-in-top">
         <slot
           v-if="validateState === 'error' && showMessage && form.showMessage"
           name="error"
           :error="validateMessage">
           <div
-            class="el-form-item__error"
+            class="sd-form-item__error"
             :class="{
-              'el-form-item__error--inline': typeof inlineMessage === 'boolean'
+              'sd-form-item__error--inline': typeof inlineMessage === 'boolean'
                 ? inlineMessage
-                : (elForm && elForm.inlineMessage || false)
+                : (sdForm && sdForm.inlineMessage || false)
             }"
           >
             {{validateMessage}}
@@ -45,19 +45,19 @@
   import { noop, getPropByPath } from 'element-ui/src/utils/util';
   import LabelWrap from './label-wrap';
   export default {
-    name: 'ElFormItem',
+    name: 'SdFormItem',
 
-    componentName: 'ElFormItem',
+    componentName: 'SdFormItem',
 
     mixins: [emitter],
 
     provide() {
       return {
-        elFormItem: this
+        sdFormItem: this
       };
     },
 
-    inject: ['elForm'],
+    inject: ['sdForm'],
 
     props: {
       label: String,
@@ -120,7 +120,7 @@
           if (this.labelWidth === 'auto') {
             ret.marginLeft = this.computedLabelWidth;
           } else if (this.form.labelWidth === 'auto') {
-            ret.marginLeft = this.elForm.autoLabelWidth;
+            ret.marginLeft = this.sdForm.autoLabelWidth;
           }
         } else {
           ret.marginLeft = labelWidth;
@@ -130,8 +130,8 @@
       form() {
         let parent = this.$parent;
         let parentName = parent.$options.componentName;
-        while (parentName !== 'ElForm') {
-          if (parentName === 'ElFormItem') {
+        while (parentName !== 'SdForm') {
+          if (parentName === 'SdFormItem') {
             this.isNested = true;
           }
           parent = parent.$parent;
@@ -166,7 +166,7 @@
         return isRequired;
       },
       _formSize() {
-        return this.elForm.size;
+        return this.sdForm.size;
       },
       elFormItemSize() {
         return this.size || this._formSize;
@@ -214,7 +214,7 @@
           this.validateMessage = errors ? errors[0].message : '';
 
           callback(this.validateMessage, invalidFields);
-          this.elForm && this.elForm.$emit('validate', this.prop, !errors, this.validateMessage || null);
+          this.sdForm && this.sdForm.$emit('validate', this.prop, !errors, this.validateMessage || null);
         });
       },
       clearValidate() {
@@ -242,7 +242,7 @@
           prop.o[prop.k] = this.initialValue;
         }
 
-        this.broadcast('ElTimeSelect', 'fieldReset', this.initialValue);
+        this.broadcast('SdTimeSelect', 'fieldReset', this.initialValue);
       },
       getRules() {
         let formRules = this.form.rules;
@@ -294,7 +294,7 @@
     },
     mounted() {
       if (this.prop) {
-        this.dispatch('ElForm', 'el.form.addField', [this]);
+        this.dispatch('SdForm', 'el.form.addField', [this]);
 
         let initialValue = this.fieldValue;
         if (Array.isArray(initialValue)) {
@@ -308,7 +308,7 @@
       }
     },
     beforeDestroy() {
-      this.dispatch('ElForm', 'el.form.removeField', [this]);
+      this.dispatch('SdForm', 'el.form.removeField', [this]);
     }
   };
 </script>

@@ -1,7 +1,7 @@
 <template>
-  <form class="el-form" :class="[
-    labelPosition ? 'el-form--label-' + labelPosition : '',
-    { 'el-form--inline': inline }
+  <form class="sd-form" :class="[
+    labelPosition ? 'sd-form--label-' + labelPosition : '',
+    { 'sd-form--inline': inline }
   ]">
     <slot></slot>
   </form>
@@ -10,13 +10,13 @@
   import objectAssign from 'element-ui/src/utils/merge';
 
   export default {
-    name: 'ElForm',
+    name: 'SdForm',
 
-    componentName: 'ElForm',
+    componentName: 'SdForm',
 
     provide() {
       return {
-        elForm: this
+        sdForm: this
       };
     },
 
@@ -89,7 +89,7 @@
     methods: {
       resetFields() {
         if (!this.model) {
-          console.warn('[Element Warn][Form]model is required for resetFields to work.');
+          console.warn('[seedland Warn][Form]model is required for resetFields to work.');
           return;
         }
         this.fields.forEach(field => {
@@ -108,7 +108,7 @@
       },
       validate(callback) {
         if (!this.model) {
-          console.warn('[Element Warn][Form]model is required for validate to work!');
+          console.warn('[seedland Warn][Form]model is required for validate to work!');
           return;
         }
 
@@ -149,7 +149,7 @@
         props = [].concat(props);
         const fields = this.fields.filter(field => props.indexOf(field.prop) !== -1);
         if (!fields.length) {
-          console.warn('[Element Warn]please pass correct props!');
+          console.warn('[seedland Warn]please pass correct props!');
           return;
         }
 
@@ -161,7 +161,7 @@
         const index = this.potentialLabelWidthArr.indexOf(width);
         // it's impossible
         if (index === -1) {
-          throw new Error('[ElementForm]unpected width ', width);
+          throw new Error('[SeedlandForm]unpected width ', width);
         }
         return index;
       },

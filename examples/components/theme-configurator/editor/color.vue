@@ -1,19 +1,19 @@
 <template>
   <section class="config" :key="displayName">
     <div class="config-label">
-      <el-tooltip :content="displayName">
+      <sd-tooltip :content="displayName">
         <span>{{displayKeyName}}</span>
-      </el-tooltip>
+      </sd-tooltip>
     </div>
     <div class="config-content">
       <div class="content-80">
-        <el-input
+        <sd-input
           size="medium"
           :value=displayValue
           readonly
           slot="reference"
           @click.native="onInputClick"
-        ></el-input>
+        ></sd-input>
       </div>
       <div class="content-20">
         <color-picker 

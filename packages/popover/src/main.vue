@@ -5,8 +5,8 @@
       @after-enter="handleAfterEnter"
       @after-leave="handleAfterLeave">
       <div
-        class="el-popover el-popper"
-        :class="[popperClass, content && 'el-popover--plain']"
+        class="sd-popover sd-popper"
+        :class="[popperClass, content && 'sd-popover--plain']"
         ref="popper"
         v-show="!disabled && showPopper"
         :style="{ width: width + 'px' }"
@@ -14,7 +14,7 @@
         :id="tooltipId"
         :aria-hidden="(disabled || !showPopper) ? 'true' : 'false'"
       >
-        <div class="el-popover__title" v-if="title" v-text="title"></div>
+        <div class="sd-popover__title" v-if="title" v-text="title"></div>
         <slot>{{ content }}</slot>
       </div>
     </transition>
@@ -28,7 +28,7 @@ import { addClass, removeClass } from 'element-ui/src/utils/dom';
 import { generateId } from 'element-ui/src/utils/util';
 
 export default {
-  name: 'ElPopover',
+  name: 'SdPopover',
 
   mixins: [Popper],
 
@@ -67,7 +67,7 @@ export default {
 
   computed: {
     tooltipId() {
-      return `el-popover-${generateId()}`;
+      return `sd-popover-${generateId()}`;
     }
   },
   watch: {
@@ -88,7 +88,7 @@ export default {
     }
     // 可访问性
     if (reference) {
-      addClass(reference, 'el-popover__reference');
+      addClass(reference, 'sd-popover__reference');
       reference.setAttribute('aria-describedby', this.tooltipId);
       reference.setAttribute('tabindex', this.tabindex); // tab序列
       popper.setAttribute('tabindex', 0);
@@ -118,7 +118,7 @@ export default {
       on(popper, 'mouseleave', this.handleMouseLeave);
     } else if (this.trigger === 'focus') {
       if (this.tabindex < 0) {
-        console.warn('[Element Warn][Popover]a negative taindex means that the element cannot be focused by tab key');
+        console.warn('[Seedland Warn][Popover]a negative taindex means that the element cannot be focused by tab key');
       }
       if (reference.querySelector('input, textarea')) {
         on(reference, 'focusin', this.doShow);

@@ -7,11 +7,11 @@
 :::demo Progress 组件设置`percentage`属性即可，表示进度条对应的百分比，**必填**，必须在 0-100。
 
 ```html
-<el-progress :percentage="0"></el-progress>
-<el-progress :percentage="70"></el-progress>
-<el-progress :percentage="80" color="#8e71c7"></el-progress>
-<el-progress :percentage="100" status="success"></el-progress>
-<el-progress :percentage="50" status="exception"></el-progress>
+<sd-progress :percentage="0"></sd-progress>
+<sd-progress :percentage="70"></sd-progress>
+<sd-progress :percentage="80" color="#8e71c7"></sd-progress>
+<sd-progress :percentage="100" status="success"></sd-progress>
+<sd-progress :percentage="50" status="exception"></sd-progress>
 ```
 :::
 
@@ -22,11 +22,11 @@
 :::demo Progress 组件可通过 `stroke-width` 属性更改进度条的高度，并可通过 `text-inside` 属性来将进度条描述置于进度条内部。
 
 ```html
-<el-progress :text-inside="true" :stroke-width="18" :percentage="0"></el-progress>
-<el-progress :text-inside="true" :stroke-width="18" :percentage="70"></el-progress>
-<el-progress :text-inside="true" :stroke-width="18" :percentage="80" color="rgba(142, 113, 199, 0.7)"></el-progress>
-<el-progress :text-inside="true" :stroke-width="18" :percentage="100" status="success"></el-progress>
-<el-progress :text-inside="true" :stroke-width="18" :percentage="50" status="exception"></el-progress>
+<sd-progress :text-inside="true" :stroke-width="18" :percentage="0"></sd-progress>
+<sd-progress :text-inside="true" :stroke-width="18" :percentage="70"></sd-progress>
+<sd-progress :text-inside="true" :stroke-width="18" :percentage="80" color="rgba(142, 113, 199, 0.7)"></sd-progress>
+<sd-progress :text-inside="true" :stroke-width="18" :percentage="100" status="success"></sd-progress>
+<sd-progress :text-inside="true" :stroke-width="18" :percentage="50" status="exception"></sd-progress>
 ```
 :::
 
@@ -35,12 +35,12 @@
 :::demo Progress 组件可通过 `type` 属性来指定使用环形进度条，在环形进度条中，还可以通过 `width` 属性来设置其大小。
 
 ```html
-<el-progress type="circle" :percentage="0"></el-progress>
-<el-progress type="circle" :percentage="25"></el-progress>
-<el-progress type="circle" :percentage="80" color="#8e71c7"></el-progress>
-<el-progress type="circle" :percentage="100" status="success"></el-progress>
-<el-progress type="circle" :percentage="50" status="exception"></el-progress>
-<el-progress type="circle" :percentage="100" status="text">Done</el-progress>
+<sd-progress type="circle" :percentage="0"></sd-progress>
+<sd-progress type="circle" :percentage="25"></sd-progress>
+<sd-progress type="circle" :percentage="80" color="#8e71c7"></sd-progress>
+<sd-progress type="circle" :percentage="100" status="success"></sd-progress>
+<sd-progress type="circle" :percentage="50" status="exception"></sd-progress>
+<sd-progress type="circle" :percentage="100" status="text">Done</sd-progress>
 ```
 :::
 

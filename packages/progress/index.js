@@ -1,8 +1,8 @@
-import ElProgress from './src/progress';
+import SdProgress from './src/progress';
 
 /* istanbul ignore next */
-ElProgress.install = function(Vue) {
-  Vue.component(ElProgress.name, ElProgress);
+SdProgress.install = function(Vue) {
+  Vue.component(SdProgress.name, SdProgress);
 };
 
-export default ElProgress;
+export default SdProgress;

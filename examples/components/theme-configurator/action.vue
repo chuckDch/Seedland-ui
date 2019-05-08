@@ -1,22 +1,22 @@
 <template>
   <div class="configurator-action">
       <div class="action-group">
-        <el-tooltip :content="getActionDisplayName('undo')">
+        <sd-tooltip :content="getActionDisplayName('undo')">
           <img 
             src="../../assets/images/icon-undo.svg"
             @click="onUndo"
             :class="{ 'active': userConfigHistory.length > 0 }"
           />
-        </el-tooltip>
-        <el-tooltip :content="getActionDisplayName('redo')">
+        </sd-tooltip>
+        <sd-tooltip :content="getActionDisplayName('redo')">
           <img 
             src="../../assets/images/icon-redo.svg"
             @click="onRedo"
             :class="{ 'active': userConfigRedoHistory.length > 0 }"
           />
-        </el-tooltip>
+        </sd-tooltip>
         <div class="button-group">
-          <el-button 
+          <sd-button 
             class="reset"
             type="primary" 
             round 
@@ -25,8 +25,8 @@
             @click="onReset"
           >
             {{getActionDisplayName('reset-theme')}}
-          </el-button>
-          <el-button 
+          </sd-button>
+          <sd-button 
             class="download"
             type="primary" 
             round 
@@ -35,17 +35,17 @@
             @click="onDownload"
           >
             {{getActionDisplayName('download-theme')}}
-          </el-button>
+          </sd-button>
         </div>
       </div>
-      <el-select v-model="selectedComponent" class="selector">
-        <el-option
+      <sd-select v-model="selectedComponent" class="selector">
+        <sd-option
           v-for="item in selectOptions"
           :key="item.value"
           :label="item.label"
           :value="item.value">
-        </el-option>
-      </el-select>
+        </sd-option>
+      </sd-select>
       <div class="line"></div>
     </div>
 </template>
@@ -72,7 +72,7 @@
     }
     .button-group {
       float: right;
-      .el-button {
+      .sd-button {
         padding: 6px 15px;
         &.is-disabled {
           color: #C0C4CC;

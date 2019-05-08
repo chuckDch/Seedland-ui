@@ -1,6 +1,6 @@
 <template>
   <div
-    class="el-switch"
+    class="sd-switch"
     :class="{ 'is-disabled': switchDisabled, 'is-checked': checked }"
     role="switch"
     :aria-checked="checked"
@@ -8,7 +8,7 @@
     @click="switchValue"
   >
     <input
-      class="el-switch__input"
+      class="sd-switch__input"
       type="checkbox"
       @change="handleChange"
       ref="input"
@@ -20,15 +20,15 @@
       @keydown.enter="switchValue"
     >
     <span
-      :class="['el-switch__label', 'el-switch__label--left', !checked ? 'is-active' : '']"
+      :class="['sd-switch__label', 'sd-switch__label--left', !checked ? 'is-active' : '']"
       v-if="inactiveIconClass || inactiveText">
       <i :class="[inactiveIconClass]" v-if="inactiveIconClass"></i>
       <span v-if="!inactiveIconClass && inactiveText" :aria-hidden="checked">{{ inactiveText }}</span>
     </span>
-    <span class="el-switch__core" ref="core" :style="{ 'width': coreWidth + 'px' }">
+    <span class="sd-switch__core" ref="core" :style="{ 'width': coreWidth + 'px' }">
     </span>
     <span
-      :class="['el-switch__label', 'el-switch__label--right', checked ? 'is-active' : '']"
+      :class="['sd-switch__label', 'sd-switch__label--right', checked ? 'is-active' : '']"
       v-if="activeIconClass || activeText">
       <i :class="[activeIconClass]" v-if="activeIconClass"></i>
       <span v-if="!activeIconClass && activeText" :aria-hidden="!checked">{{ activeText }}</span>
@@ -41,10 +41,10 @@
   import Migrating from 'element-ui/src/mixins/migrating';
 
   export default {
-    name: 'ElSwitch',
+    name: 'SdSwitch',
     mixins: [Focus('input'), Migrating, emitter],
     inject: {
-      elForm: {
+      sdForm: {
         default: ''
       }
     },
@@ -122,7 +122,7 @@
           this.setBackgroundColor();
         }
         if (this.validateEvent) {
-          this.dispatch('ElFormItem', 'el.form.change', [this.value]);
+          this.dispatch('SdFormItem', 'el.form.change', [this.value]);
         }
       }
     },

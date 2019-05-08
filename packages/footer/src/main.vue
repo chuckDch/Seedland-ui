@@ -1,14 +1,14 @@
 <template>
-  <footer class="el-footer" :style="{ height }">
+  <footer class="sd-footer" :style="{ height }">
     <slot></slot>
   </footer>
 </template>
 
 <script>
   export default {
-    name: 'ElFooter',
+    name: 'SdFooter',
 
-    componentName: 'ElFooter',
+    componentName: 'SdFooter',
 
     props: {
       height: {

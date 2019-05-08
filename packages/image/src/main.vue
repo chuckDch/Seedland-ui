@@ -1,14 +1,14 @@
 <template>
-  <div class="el-image">
+  <div class="sd-image">
     <slot v-if="loading" name="placeholder">
-      <div class="el-image__placeholder"></div>
+      <div class="sd-image__placeholder"></div>
     </slot>
     <slot v-else-if="error" name="error">
-      <div class="el-image__error">{{ t('el.image.error') }}</div>
+      <div class="sd-image__error">{{ t('el.image.error') }}</div>
     </slot>
     <img
       v-else
-      class="el-image__inner"
+      class="sd-image__inner"
       :src="src"
       :alt="alt"
       :style="{ 'object-fit': fit }">
@@ -22,7 +22,7 @@
   import throttle from 'throttle-debounce/throttle';
 
   export default {
-    name: 'ElImage',
+    name: 'SdImage',
 
     mixins: [Locale],
 
