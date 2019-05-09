@@ -1,6 +1,7 @@
 <style lang="scss" scoped>
   .headerWrapper {
     height: 80px;
+    box-shadow: rgba(29, 29, 31, 0.07) 0px 10px 60px 0px;
   }
 
   .header {
@@ -17,7 +18,7 @@
     .container {
       height: 100%;
       box-sizing: border-box;
-      border-bottom: 1px solid #DCDFE6;
+      // border-bottom: 1px solid #DCDFE6;
     }
 
     .nav-lang-spe {
@@ -137,17 +138,6 @@
         &.active,
         &:hover {
           opacity: 1;
-        }
-
-        &.active::after {
-          content: '';
-          display: inline-block;
-          position: absolute;
-          bottom: 0;
-          left: calc(50% - 15px);
-          width: 30px;
-          height: 2px;
-          background: #409EFF;
         }
       }
     }
