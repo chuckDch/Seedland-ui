@@ -26,18 +26,6 @@
       <transition name="text-slide">
         <span v-show="hovering">{{ controlText }}</span>
       </transition>
-      <sd-tooltip effect="dark" :content="langConfig['tooltip-text']" placement="right">
-        <transition name="text-slide">
-          <sd-button
-            v-show="hovering || isExpanded"
-            size="small"
-            type="text"
-            class="control-button"
-            @click.stop="goCodepen">
-            {{ langConfig['button-text'] }}
-          </sd-button>
-        </transition>
-      </sd-tooltip>
     </div>
   </div>
 </template>

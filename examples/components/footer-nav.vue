@@ -7,13 +7,13 @@
       <i class="sd-icon-arrow-left"></i>
       {{ leftNav.title || leftNav.name }}
     </span>
-    <span
+    <!-- <span
       v-if="rightNav"
       class="footer-nav-link footer-nav-right"
       @click="handleNavClick('next')">
       {{ rightNav.title || rightNav.name }}
       <i class="sd-icon-arrow-right"></i>
-    </span>
+    </span> -->
   </div>
 </template>
 
