@@ -77,7 +77,6 @@ import Image from '../packages/image/index.js';
 import Calendar from '../packages/calendar/index.js';
 import locale from 'seedland-ui/src/locale';
 import CollapseTransition from 'seedland-ui/src/transitions/collapse-transition';
-import UploadFiles from 'seedland-ui/packages/upload/src/upload-files';
 
 const components = [
   Pagination,
@@ -151,8 +150,7 @@ const components = [
   Divider,
   Image,
   Calendar,
-  CollapseTransition,
-  UploadFiles
+  CollapseTransition
 ];
 
 const install = function(Vue, opts = {}) {
@@ -265,6 +263,5 @@ export default {
   Link,
   Divider,
   Image,
-  Calendar,
-  UploadFiles
+  Calendar
 };
