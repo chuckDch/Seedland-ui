@@ -19,6 +19,7 @@ import icon from './icon.json';
 
 Vue.use(Element);
 Vue.use(VueRouter);
+
 Vue.component('demo-block', demoBlock);
 Vue.component('main-footer', MainFooter);
 Vue.component('main-header', MainHeader);
