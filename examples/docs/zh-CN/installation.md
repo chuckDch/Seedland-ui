@@ -6,13 +6,15 @@
 
 具体步骤：
 
-1.https://github.com/chuckDch/Seedland-ui，fork上面的seedland-ui。
+1.新建一个项目
 
-2.修改自己的packeg.json文件，在dependencies中新增seedland-ui这一项，指向自己的github地址（这里一定注意需指定分支或者tag号，默认是dev）。
+2.修改自己的packeg.json文件，在dependencies中新增seedland-ui这一项，指向自己的github地址（这里一定注意需指定分支或者tag号，默认是dev）
+
+3.执行npm install
 
 ```shell
 "dependencies": {
-    "seedland-ui": "git+https://github.com/chuckDch/Seedland-ui.git #dev"
+    "seedland-ui": "git+https://github.com/chuckDch/Seedland-ui.git#dev"
   },
   
 npm install
