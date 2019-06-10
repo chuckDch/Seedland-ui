@@ -1,55 +1,5 @@
 ## Upload 上传
 
-通过点击或者拖拽上传文件
-
-### 上传文件或文件夹
-
-:::demo 拖拽或点击上传文件或文件夹
-```html
-<div class="uploader-box">
-  <upload-files :options="options"></upload-files>
-</div>
-
-<script>
-  export default {
-    data () {
-      return {
-        options: {
-        // https://github.com/simple-uploader/Uploader/tree/develop/samples/Node.js
-        // 上传地址
-        target: '//localhost:3000/upload',
-        testChunks: false,
-        // 格式化剩余时间
-        parseTimeRemaining(timeRemaining, parsedTimeRemaining) {
-            return parsedTimeRemaining
-              .replace(/\syears?/, '年')
-              .replace(/\days?/, '天')
-              .replace(/\shours?/, '小时')
-              .replace(/\sminutes?/, '分钟')
-              .replace(/\sseconds?/, '秒')
-        },
-        categoryMap:{
-          image: ['gif', 'jpg', 'jpeg', 'png', 'bmp', 'webp'],
-          video: ['mp4', 'm3u8', 'rmvb', 'avi', 'swf', '3gp', 'mkv', 'flv'],
-          audio: ['mp3', 'wav', 'wma', 'ogg', 'aac', 'flac'],
-          document: ['doc', 'txt', 'docx', 'pages', 'epub', 'pdf', 'numbers', 'csv', 'xls', 'xlsx', 'keynote', 'ppt', 'pptx']
-        },
-        autoStart: false,
-        fileStatusText:{
-          success: '上传成功',
-          error: '错误',
-          uploading: '上传中...',
-          paused: '暂停',
-          waiting: '等待上传'
-        }
-      }
-      }
-    }
-  }
-</script>
-
-```
-:::
 
 ### 点击上传
 
